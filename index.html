@@ -19,6 +19,17 @@
     </ul>
   </nav>
 
+  <div class="announcement-banner">
+    <div class="announcement-content">
+      <span class="announcement-icon">🏝️</span>
+      <div class="announcement-text">
+        <strong>SKYBLOCK IS NOW LIVE!</strong>
+        <span>Build your island empire in the void. Join now at intel-v2.radheycraft.fun:25408</span>
+      </div>
+      <span class="announcement-icon">🏝️</span>
+    </div>
+  </div>
+
   <main class="hero">
     <div class="hero-content">
       <h1 class="title">VOID SMP</h1>
@@ -26,7 +37,7 @@
 
       <div class="server-ip-box">
         <span class="ip-label">Server IP</span>
-        <div class="ip-address" id="serverIp">play.voidsmp.net</div>
+        <div class="ip-address" id="serverIp">intel-v2.radheycraft.fun:25408</div>
         <button class="copy-btn" onclick="copyIP()">Copy IP</button>
       </div>
 
@@ -88,7 +99,7 @@
 
   <script>
     function copyIP() {
-      navigator.clipboard.writeText('play.voidsmp.net');
+      navigator.clipboard.writeText('intel-v2.radheycraft.fun:25408');
       const btn = document.querySelector('.copy-btn');
       btn.textContent = 'Copied!';
       setTimeout(() => btn.textContent = 'Copy IP', 2000);

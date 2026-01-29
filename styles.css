@@ -8,7 +8,12 @@
 
 body {
   font-family: Arial, sans-serif;
-  background: radial-gradient(circle at top, #1a0033, #000000);
+  background:
+    linear-gradient(to bottom, rgba(26, 0, 51, 0.85), rgba(0, 0, 0, 0.9)),
+    url('images/minecraft-bg-1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   color: white;
   min-height: 100vh;
   padding-bottom: 60px;
@@ -59,10 +64,68 @@ body {
   background: rgba(147, 51, 234, 0.2);
 }
 
+/* Announcement Banner */
+.announcement-banner {
+  background: linear-gradient(90deg, #059669, #10b981, #34d399, #10b981, #059669);
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
+  padding: 15px 20px;
+  text-align: center;
+}
+
+@keyframes shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.announcement-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.announcement-icon {
+  font-size: 24px;
+  animation: bounce 1s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.announcement-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.announcement-text strong {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 18px;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: 2px;
+}
+
+.announcement-text span {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
 /* Hero Section */
 .hero {
   text-align: center;
   padding: 80px 20px 60px;
+  background:
+    linear-gradient(to bottom, rgba(26, 0, 51, 0.7), rgba(0, 0, 0, 0.85)),
+    url('images/minecraft-bg-2.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
 }
 
 .hero-content {
@@ -221,7 +284,12 @@ body {
 
 /* About Section */
 .about-section {
-  background: rgba(0, 0, 0, 0.3);
+  background:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(26, 0, 51, 0.85)),
+    url('images/minecraft-bg-3.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   padding: 60px 20px;
   text-align: center;
 }
@@ -276,6 +344,12 @@ body {
 .page-header {
   text-align: center;
   padding: 60px 20px 40px;
+  background:
+    linear-gradient(to bottom, rgba(26, 0, 51, 0.75), rgba(0, 0, 0, 0.85)),
+    url('images/minecraft-bg-4.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .page-header h1 {
@@ -466,7 +540,11 @@ body {
 }
 
 .buy-steps {
-  background: rgba(255, 255, 255, 0.08);
+  background:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.85), rgba(26, 0, 51, 0.9)),
+    url('images/minecraft-bg-5.png');
+  background-size: cover;
+  background-position: center;
   border: 2px solid #9333ea;
   border-radius: 20px;
   padding: 40px;
@@ -536,7 +614,11 @@ body {
 .footer {
   text-align: center;
   padding: 30px 20px;
-  background: rgba(0, 0, 0, 0.5);
+  background:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(26, 0, 51, 0.95)),
+    url('images/minecraft-bg-4.jpg');
+  background-size: cover;
+  background-position: bottom center;
   border-top: 1px solid rgba(147, 51, 234, 0.3);
 }
 
@@ -575,6 +657,15 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
+  body,
+  .hero,
+  .about-section,
+  .page-header,
+  .buy-steps,
+  .footer {
+    background-attachment: scroll;
+  }
+
   .navbar {
     flex-direction: column;
     gap: 15px;

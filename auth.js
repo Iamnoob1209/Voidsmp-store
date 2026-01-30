@@ -15,13 +15,18 @@
   }
 
   function initGoogle() {
-    google.accounts.id.initialize({
-      client_id: CLIENT_ID,
-      callback: handleCredentialResponse
-    });
+  google.accounts.id.initialize({
+    client_id: CLIENT_ID,
+    callback: handleCredentialResponse
+  });
 
-    updateAuthUI();
-  }
+  google.accounts.id.renderButton(
+    document.getElementById("loginBtn"),
+    { theme: "outline", size: "large" }
+  );
+
+  updateAuthUI();
+}
 
   function handleCredentialResponse(response) {
     const payload = JSON.parse(atob(response.credential.split(".")[1]));

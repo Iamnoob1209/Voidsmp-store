@@ -17,6 +17,17 @@
       <li><a href="perks.html">Perks</a></li>
       <li><a href="buy.html">Buy Rank</a></li>
     </ul>
+    <div class="nav-auth">
+  <button id="loginBtn" onclick="handleLogin()" class="btn-login">
+    Sign in with Google
+    <div id="userMenu" class="user-menu" style="display:none;">
+      <img id="userAvatar" class="user-avatar">
+      <span id="userName" class="user-name"></span>
+      <button onclick="handleLogout()" class="btn-logout">Logout</button>
+    </div>
+</div>
+</div>
+    </div>
   </nav>
 
   <div class="announcement-banner">
@@ -89,8 +100,15 @@
   </section>
 
   <footer class="footer">
-    <p>&copy; 2025 VoidSMP. All rights reserved.</p>
-    <p>Join our <a href="https://discord.gg/TjmPSByY" target="_blank">Discord</a> for support and updates.</p>
+    <div class="footer-content">
+      <p>&copy; 2025 VoidSMP. All rights reserved.</p>
+      <p>Join our <a href="https://discord.gg/TjmPSByY" target="_blank">Discord</a> for support and updates.</p>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <span class="footer-divider">|</span>
+        <a href="terms.html">Terms of Service</a>
+      </div>
+    </div>
   </footer>
 
   <div class="banner">
@@ -106,5 +124,6 @@
     }
   </script>
 
+  <script src="auth.js"></script>
 </body>
 </html>

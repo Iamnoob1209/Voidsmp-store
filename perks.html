@@ -17,6 +17,14 @@
       <li><a href="perks.html" class="active">Perks</a></li>
       <li><a href="buy.html">Buy Rank</a></li>
     </ul>
+    <div class="nav-auth">
+      <button class="btn-login" onclick="handleLogin()" id="loginBtn">Sign In</button>
+      <div class="user-menu" id="userMenu" style="display: none;">
+        <img src="" alt="Profile" class="user-avatar" id="userAvatar">
+        <span class="user-name" id="userName"></span>
+        <button class="btn-logout" onclick="handleLogout()">Sign Out</button>
+      </div>
+    </div>
   </nav>
 
   <header class="page-header">
@@ -38,9 +46,9 @@
           <tr>
             <th>Perk</th>
             <th style="color: #a78bfa;">HERO<br><small>₹50</small></th>
-            <th style="color: #22d3ee;">LEGEND<br><small>₹90</small></th>
-            <th style="color: #fb923c;">VIP AND VIP+<br><small>₹110/₹149</small></th>
-            <th style="color: #ffd700;">MEGA VIP <br><small>₹199</small></th>
+            <th style="color: #22d3ee;">LEGEND<br><small>₹110</small></th>
+            <th style="color: #fb923c;">VIP and VIP+ <br><small>₹110 / ₹149</small></th>
+            <th style="color: #ffd700;">MEGA VIP<br><small>₹199</small></th>
           </tr>
         </thead>
         <tbody>
@@ -215,13 +223,22 @@
   </main>
 
   <footer class="footer">
-    <p>&copy; 2025 VoidSMP. All rights reserved.</p>
-    <p>Join our <a href="https://discord.gg/TjmPSByY" target="_blank">Discord</a> for support and updates.</p>
+    <div class="footer-content">
+      <p>&copy; 2025 VoidSMP. All rights reserved.</p>
+      <p>Join our <a href="https://discord.gg/TjmPSByY" target="_blank">Discord</a> for support and updates.</p>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <span class="footer-divider">|</span>
+        <a href="terms.html">Terms of Service</a>
+      </div>
+    </div>
   </footer>
 
   <div class="banner">
     ⚠️ LIFESTEAL IS UNDER MAINTENANCE ⚠️
   </div>
+
+  <script src="auth.js"></script>
 
 </body>
 </html>

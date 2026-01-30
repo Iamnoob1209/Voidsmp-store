@@ -17,6 +17,14 @@
       <li><a href="perks.html">Perks</a></li>
       <li><a href="buy.html">Buy Rank</a></li>
     </ul>
+    <div class="nav-auth">
+      <button class="btn-login" onclick="handleLogin()" id="loginBtn">Sign In</button>
+      <div class="user-menu" id="userMenu" style="display: none;">
+        <img src="" alt="Profile" class="user-avatar" id="userAvatar">
+        <span class="user-name" id="userName"></span>
+        <button class="btn-logout" onclick="handleLogout()">Sign Out</button>
+      </div>
+    </div>
   </nav>
 
   <header class="page-header">
@@ -209,6 +217,45 @@
         <button class="btn btn-secondary" onclick="hideVipTiers()" style="margin-top: 20px;">← Back to Survival Ranks</button>
       </div>
 
+      <!-- Items Section -->
+      <div id="items-section" class="items-section">
+        <h2 class="section-title">Items</h2>
+        <p class="section-subtitle">Purchase in-game items to enhance your gameplay</p>
+
+        <div class="items-grid">
+          <div class="item-card item-landclaim">
+            <div class="item-icon">🗺️</div>
+            <div class="item-header">
+              <h3>Land Claim</h3>
+              <span class="item-price">₹10</span>
+            </div>
+            <p class="item-description">Claim an additional chunk to protect your builds and resources.</p>
+            <span class="item-unit">per chunk</span>
+            <a href="buy.html" class="btn btn-primary">Buy Now</a>
+          </div>
+
+          <div class="item-card item-elytra">
+            <div class="item-icon">🐦</div>
+            <div class="item-header">
+              <h3>Elytra</h3>
+              <span class="item-price">₹35</span>
+            </div>
+            <p class="item-description">Soar through the skies with these rare wings from the End.</p>
+            <a href="buy.html" class="btn btn-primary">Buy Now</a>
+          </div>
+
+          <div class="item-card item-mace">
+            <div class="item-icon">🔨</div>
+            <div class="item-header">
+              <h3>Mace</h3>
+              <span class="item-price">₹59</span>
+            </div>
+            <p class="item-description">A powerful weapon that deals massive damage from above.</p>
+            <a href="buy.html" class="btn btn-primary">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
       <button class="btn btn-secondary back-btn" onclick="hideGameMode()">← Back to Game Modes</button>
     </div>
 
@@ -226,8 +273,15 @@
   </section>
 
   <footer class="footer">
-    <p>&copy; 2025 VoidSMP. All rights reserved.</p>
-    <p>Join our <a href="https://discord.gg/TjmPSByY" target="_blank">Discord</a> for support and updates.</p>
+    <div class="footer-content">
+      <p>&copy; 2025 VoidSMP. All rights reserved.</p>
+      <p>Join our <a href="https://discord.gg/TjmPSByY" target="_blank">Discord</a> for support and updates.</p>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <span class="footer-divider">|</span>
+        <a href="terms.html">Terms of Service</a>
+      </div>
+    </div>
   </footer>
 
   <div class="banner">
@@ -268,6 +322,8 @@
       document.querySelector('#survival-section .back-btn').style.display = 'inline-block';
     }
   </script>
+
+  <script src="auth.js"></script>
 
 </body>
 </html>

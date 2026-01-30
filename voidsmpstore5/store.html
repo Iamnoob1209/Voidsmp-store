@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Store - VoidSMP</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-brand">VOID SMP</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="store.html" class="active">Store</a></li>
+      <li><a href="perks.html">Perks</a></li>
+      <li><a href="buy.html">Buy Rank</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-header">
+    <h1>VOID SMP STORE</h1>
+    <p class="subtitle">Choose your game mode and support the server!</p>
+  </header>
+
+  <main class="store-container">
+    <!-- Donation Progress Scale -->
+    <div class="donation-scale-container">
+      <h3>Donation Progress</h3>
+      <div class="donation-scale">
+        <div class="donation-progress" style="width: 0%;"></div>
+      </div>
+      <div class="donation-labels">
+        <span>0%</span>
+        <span>Goal: Server Upgrades</span>
+        <span>100%</span>
+      </div>
+      <p class="donation-amount">₹0 raised</p>
+    </div>
+
+    <!-- Game Mode Selection -->
+    <div class="gamemode-selection">
+      <h2>Select Game Mode</h2>
+      <div class="gamemode-cards">
+        <div class="gamemode-card gamemode-skyblock" onclick="showGameMode('skyblock')">
+          <div class="gamemode-icon">🏝️</div>
+          <h3>Skyblock</h3>
+          <p>Build your island empire</p>
+        </div>
+        <div class="gamemode-card gamemode-survival" onclick="showGameMode('survival')">
+          <div class="gamemode-icon">🌲</div>
+          <h3>Survival</h3>
+          <p>Classic survival experience</p>
+        </div>
+        <div class="gamemode-card gamemode-lifesteal" onclick="showGameMode('lifesteal')">
+          <div class="gamemode-icon">❤️</div>
+          <h3>Lifesteal</h3>
+          <p>Steal hearts from enemies</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Skyblock Section - Coming Soon -->
+    <div id="skyblock-section" class="gamemode-content" style="display: none;">
+      <div class="status-banner coming-soon">
+        <span class="status-icon">🚧</span>
+        <div class="status-text">
+          <strong>COMING SOON</strong>
+          <p>Skyblock ranks will be available soon. Stay tuned!</p>
+        </div>
+      </div>
+      <button class="btn btn-secondary" onclick="hideGameMode()">← Back to Game Modes</button>
+    </div>
+
+    <!-- Lifesteal Section - Under Maintenance -->
+    <div id="lifesteal-section" class="gamemode-content" style="display: none;">
+      <div class="status-banner maintenance">
+        <span class="status-icon">⚠️</span>
+        <div class="status-text">
+          <strong>UNDER MAINTENANCE</strong>
+          <p>Lifesteal is currently under maintenance. Please check back later.</p>
+        </div>
+      </div>
+      <button class="btn btn-secondary" onclick="hideGameMode()">← Back to Game Modes</button>
+    </div>
+
+    <!-- Survival Section -->
+    <div id="survival-section" class="gamemode-content" style="display: none;">
+      <h2 class="section-title">Survival Ranks</h2>
+      <p class="section-subtitle">Choose a rank to enhance your survival experience</p>
+
+      <div class="survival-ranks">
+        <div class="rank-card rank-hero">
+          <div class="rank-header">
+            <h2>HERO</h2>
+            <span class="rank-price">₹50</span>
+          </div>
+          <p style="color: #aaa; margin-bottom: 15px;">Start your journey with essential perks.</p>
+          <ul>
+            <li>Custom Hero chat prefix & tag</li>
+            <li>/hat command - wear any block</li>
+            <li>2 extra home locations</li>
+            <li>Hero kit every 24 hours</li>
+            <li>Hero Discord role</li>
+          </ul>
+          <a href="buy.html" class="btn btn-primary">Buy Hero</a>
+        </div>
+
+        <div class="rank-card rank-legend">
+          <div class="rank-header">
+            <h2>LEGEND</h2>
+            <span class="rank-price">₹90</span>
+          </div>
+          <p style="color: #aaa; margin-bottom: 15px;">Become legendary with powerful commands.</p>
+          <ul>
+            <li>All Hero perks included</li>
+            <li>/craft command - portable crafting</li>
+            <li>/heal command (1 hour cooldown)</li>
+            <li>4 extra home locations</li>
+            <li>Legend kit every 24 hours</li>
+            <li>Priority support</li>
+            <li>Legend Discord role & channels</li>
+          </ul>
+          <a href="buy.html" class="btn btn-primary">Buy Legend</a>
+        </div>
+
+        <div class="rank-card rank-vip-main" onclick="showVipTiers()">
+          <div class="rank-header">
+            <h2>VIP</h2>
+            <span class="rank-price">From ₹110</span>
+          </div>
+          <p style="color: #aaa; margin-bottom: 15px;">Ultimate VIP experience with 3 tier options.</p>
+          <ul>
+            <li>All Legend perks included</li>
+            <li>Multiple tier options available</li>
+            <li>Exclusive VIP commands</li>
+            <li>Maximum perks and benefits</li>
+            <li>Click to view VIP tiers</li>
+          </ul>
+          <button class="btn btn-primary">View VIP Tiers →</button>
+        </div>
+      </div>
+
+      <!-- VIP Sub-tiers -->
+      <div id="vip-tiers" class="vip-tiers-section" style="display: none;">
+        <h2 class="section-title">VIP Tiers</h2>
+        <p class="section-subtitle">Choose your VIP level</p>
+
+        <div class="vip-ranks">
+          <div class="rank-card rank-vip">
+            <div class="rank-header">
+              <h2>VIP</h2>
+              <span class="rank-price">₹110</span>
+            </div>
+            <p style="color: #aaa; margin-bottom: 15px;">Entry-level VIP with great perks.</p>
+            <ul>
+              <li>All Legend perks included</li>
+              <li>/enderchest command</li>
+              <li>/feed command (1 hour cooldown)</li>
+              <li>5 extra home locations (9 total)</li>
+              <li>VIP kit every 12 hours</li>
+              <li>Colored chat messages</li>
+              <li>VIP Discord role</li>
+            </ul>
+            <a href="buy.html" class="btn btn-primary">Buy VIP</a>
+          </div>
+
+          <div class="rank-card rank-vipplus">
+            <div class="rank-header">
+              <h2>VIP+</h2>
+              <span class="rank-price">₹149</span>
+            </div>
+            <p style="color: #aaa; margin-bottom: 15px;">Enhanced VIP with more features.</p>
+            <ul>
+              <li>All VIP perks included</li>
+              <li>/fly command (Survival only)</li>
+              <li>/heal command (30 min cooldown)</li>
+              <li>/back command on death</li>
+              <li>7 extra home locations (11 total)</li>
+              <li>VIP+ kit every 12 hours</li>
+              <li>Special particle effects</li>
+              <li>VIP+ Discord role & channels</li>
+            </ul>
+            <a href="buy.html" class="btn btn-primary">Buy VIP+</a>
+          </div>
+
+          <div class="rank-card rank-megavip">
+            <div class="rank-header">
+              <h2>MEGA VIP</h2>
+              <span class="rank-price">₹199</span>
+            </div>
+            <p style="color: #aaa; margin-bottom: 15px;">The ultimate VIP experience.</p>
+            <ul>
+              <li>All VIP+ perks included</li>
+              <li>/god command (temporary invincibility)</li>
+              <li>/nick command with colors</li>
+              <li>/heal command (15 min cooldown)</li>
+              <li>10 extra home locations (14 total)</li>
+              <li>Mega VIP legendary kit</li>
+              <li>Custom join/leave messages</li>
+              <li>Priority in events & giveaways</li>
+              <li>Mega VIP Discord role & exclusive channels</li>
+            </ul>
+            <a href="buy.html" class="btn btn-primary">Buy Mega VIP</a>
+          </div>
+        </div>
+
+        <button class="btn btn-secondary" onclick="hideVipTiers()" style="margin-top: 20px;">← Back to Survival Ranks</button>
+      </div>
+
+      <!-- Items Section -->
+      <div id="items-section" class="items-section">
+        <h2 class="section-title">Items</h2>
+        <p class="section-subtitle">Purchase in-game items to enhance your gameplay</p>
+
+        <div class="items-grid">
+          <div class="item-card item-landclaim">
+            <div class="item-icon">🗺️</div>
+            <div class="item-header">
+              <h3>Land Claim</h3>
+              <span class="item-price">₹10</span>
+            </div>
+            <p class="item-description">Claim an additional chunk to protect your builds and resources.</p>
+            <span class="item-unit">per chunk</span>
+            <a href="buy.html" class="btn btn-primary">Buy Now</a>
+          </div>
+
+          <div class="item-card item-elytra">
+            <div class="item-icon">🪽</div>
+            <div class="item-header">
+              <h3>Elytra</h3>
+              <span class="item-price">₹35</span>
+            </div>
+            <p class="item-description">Soar through the skies with these rare wings from the End.</p>
+            <a href="buy.html" class="btn btn-primary">Buy Now</a>
+          </div>
+
+          <div class="item-card item-mace">
+            <div class="item-icon">🔨</div>
+            <div class="item-header">
+              <h3>Mace</h3>
+              <span class="item-price">₹59</span>
+            </div>
+            <p class="item-description">A powerful weapon that deals massive damage from above.</p>
+            <a href="buy.html" class="btn btn-primary">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn btn-secondary back-btn" onclick="hideGameMode()">← Back to Game Modes</button>
+    </div>
+
+  </main>
+
+  <section class="about-section">
+    <div class="container">
+      <h2>Why Buy a Rank?</h2>
+      <p>Purchasing a rank helps support the server, keeping it online and allowing us to add new features and content. Plus, you get awesome perks that enhance your gameplay experience!</p>
+      <div style="margin-top: 30px;">
+        <a href="buy.html" class="btn btn-primary">Purchase Now</a>
+        <a href="perks.html" class="btn btn-secondary">Compare All Perks</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 VoidSMP. All rights reserved.</p>
+    <p>Join our <a href="https://discord.gg/TjmPSByY" target="_blank">Discord</a> for support and updates.</p>
+  </footer>
+
+  <div class="banner">
+    ⚠️ LIFESTEAL IS UNDER MAINTENANCE ⚠️
+  </div>
+
+  <script>
+    function showGameMode(mode) {
+      // Hide all sections
+      document.querySelectorAll('.gamemode-content').forEach(el => el.style.display = 'none');
+      document.querySelector('.gamemode-selection').style.display = 'none';
+
+      // Show selected section
+      document.getElementById(mode + '-section').style.display = 'block';
+
+      // Hide VIP tiers if showing survival
+      if (mode === 'survival') {
+        document.getElementById('vip-tiers').style.display = 'none';
+        document.querySelector('.survival-ranks').style.display = 'grid';
+        document.querySelector('#survival-section .back-btn').style.display = 'inline-block';
+      }
+    }
+
+    function hideGameMode() {
+      document.querySelectorAll('.gamemode-content').forEach(el => el.style.display = 'none');
+      document.querySelector('.gamemode-selection').style.display = 'block';
+    }
+
+    function showVipTiers() {
+      document.getElementById('vip-tiers').style.display = 'block';
+      document.querySelector('.survival-ranks').style.display = 'none';
+      document.querySelector('#survival-section .back-btn').style.display = 'none';
+    }
+
+    function hideVipTiers() {
+      document.getElementById('vip-tiers').style.display = 'none';
+      document.querySelector('.survival-ranks').style.display = 'grid';
+      document.querySelector('#survival-section .back-btn').style.display = 'inline-block';
+    }
+  </script>
+
+</body>
+</html>

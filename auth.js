@@ -1,9 +1,36 @@
-// VoidSMP Google Auth - Fixed Version
+// VoidSMP Google Auth - With Session Protection
 
 (function () {
   "use strict";
 
   const CLIENT_ID = "1070356258235-iem5g6b0rh7r3pjju4747i8vv77oai7u.apps.googleusercontent.com";
+
+  // Protected pages that require authentication
+  const protectedPages = ["home.html", "store.html", "perks.html", "buy.html", "ranks.html"];
+  const currentPage = window.location.pathname.split("/").pop() || "index.html";
+
+  // Check if current page requires authentication
+  function checkAuth() {
+    if (protectedPages.includes(currentPage)) {
+      const token = localStorage.getItem("voidsmp_token");
+      const captchaVerified = sessionStorage.getItem("voidsmp_captcha_verified");
+
+      if (!token || !captchaVerified) {
+        // Clear any incomplete session data
+        localStorage.removeItem("voidsmp_token");
+        sessionStorage.removeItem("voidsmp_captcha_verified");
+        // Redirect to sign-in page
+        window.location.replace("signin.html");
+        return false;
+      }
+    }
+    return true;
+  }
+
+  // Run auth check immediately
+  if (!checkAuth()) {
+    return; // Stop execution if redirecting
+  }
 
   function loadGoogle() {
     const script = document.createElement("script");
@@ -15,18 +42,21 @@
   }
 
   function initGoogle() {
-  google.accounts.id.initialize({
-    client_id: CLIENT_ID,
-    callback: handleCredentialResponse
-  });
+    google.accounts.id.initialize({
+      client_id: CLIENT_ID,
+      callback: handleCredentialResponse
+    });
 
-  google.accounts.id.renderButton(
-    document.getElementById("loginBtn"),
-    { theme: "outline", size: "large" }
-  );
+    const loginBtn = document.getElementById("loginBtn");
+    if (loginBtn) {
+      google.accounts.id.renderButton(
+        loginBtn,
+        { theme: "outline", size: "large" }
+      );
+    }
 
-  updateAuthUI();
-}
+    updateAuthUI();
+  }
 
   function handleCredentialResponse(response) {
     const payload = JSON.parse(atob(response.credential.split(".")[1]));
@@ -63,16 +93,20 @@
   }
 
   window.handleLogin = function () {
-  google.accounts.id.renderButton(
-    document.getElementById("loginBtn"),
-    { theme: "outline", size: "large" }
-  );
-};
+    google.accounts.id.renderButton(
+      document.getElementById("loginBtn"),
+      { theme: "outline", size: "large" }
+    );
+  };
 
   window.handleLogout = function () {
     localStorage.removeItem("voidsmp_token");
-    updateAuthUI();
+    sessionStorage.removeItem("voidsmp_captcha_verified");
     showNotification("Logged out", "success");
+    // Redirect to sign-in page after logout
+    setTimeout(() => {
+      window.location.href = "signin.html";
+    }, 1000);
   };
 
   function showNotification(msg, type) {
@@ -85,6 +119,7 @@
     n.style.background = type === "success" ? "#10b981" : "#ef4444";
     n.style.color = "white";
     n.style.borderRadius = "8px";
+    n.style.zIndex = "10000";
     document.body.appendChild(n);
     setTimeout(() => n.remove(), 2000);
   }

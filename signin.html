@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In - VoidSMP</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body class="signin-page">
+
+  <main class="signin-container">
+    <div class="signin-card">
+      <div class="signin-header">
+        <h1 class="signin-title">VOID SMP</h1>
+        <p class="signin-tagline">Enter the Void. Conquer the Unknown.</p>
+      </div>
+
+      <div class="signin-content">
+        <h2>Welcome</h2>
+        <p class="signin-description">Please verify you're human and sign in with Google to continue.</p>
+
+        <div id="captcha-step" class="signin-step">
+          <div class="step-label">Step 1: Verify you're human</div>
+          <div class="captcha-wrapper">
+            <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" data-callback="onCaptchaSuccess"></div>
+          </div>
+        </div>
+
+        <div id="google-step" class="signin-step disabled">
+          <div class="step-label">Step 2: Sign in with Google</div>
+          <div id="googleSignInBtn" class="google-signin-wrapper"></div>
+        </div>
+
+        <div id="signin-success" class="signin-success" style="display: none;">
+          <div class="success-icon">&#10003;</div>
+          <p>Verification complete! Redirecting...</p>
+        </div>
+      </div>
+
+      <div class="signin-footer">
+        <p>By signing in, you agree to our <a href="terms.html">Terms of Service</a> and <a href="privacy.html">Privacy Policy</a>.</p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    let captchaVerified = false;
+    const CLIENT_ID = "1070356258235-iem5g6b0rh7r3pjju4747i8vv77oai7u.apps.googleusercontent.com";
+
+    // Check if user is already signed in
+    function checkExistingSession() {
+      const token = localStorage.getItem("voidsmp_token");
+      const captchaCompleted = sessionStorage.getItem("voidsmp_captcha_verified");
+
+      if (token && captchaCompleted) {
+        // User is already signed in and captcha was verified this session
+        window.location.href = "home.html";
+      }
+    }
+
+    // Called when CAPTCHA is successfully completed
+    function onCaptchaSuccess(response) {
+      if (response) {
+        captchaVerified = true;
+        sessionStorage.setItem("voidsmp_captcha_verified", "true");
+
+        // Enable Google Sign-In step
+        const googleStep = document.getElementById("google-step");
+        googleStep.classList.remove("disabled");
+
+        // Add visual feedback
+        const captchaStep = document.getElementById("captcha-step");
+        captchaStep.classList.add("completed");
+
+        // Initialize Google Sign-In
+        initGoogleSignIn();
+      }
+    }
+
+    // Initialize Google Sign-In
+    function initGoogleSignIn() {
+      if (typeof google !== 'undefined' && google.accounts) {
+        google.accounts.id.initialize({
+          client_id: CLIENT_ID,
+          callback: handleGoogleSignIn
+        });
+
+        google.accounts.id.renderButton(
+          document.getElementById("googleSignInBtn"),
+          {
+            theme: "outline",
+            size: "large",
+            width: 280,
+            text: "signin_with"
+          }
+        );
+      } else {
+        // Wait for Google API to load
+        setTimeout(initGoogleSignIn, 100);
+      }
+    }
+
+    // Handle Google Sign-In response
+    function handleGoogleSignIn(response) {
+      if (!captchaVerified) {
+        alert("Please complete the CAPTCHA verification first.");
+        return;
+      }
+
+      const payload = JSON.parse(atob(response.credential.split(".")[1]));
+      localStorage.setItem("voidsmp_token", JSON.stringify(payload));
+
+      // Show success message
+      document.getElementById("signin-success").style.display = "flex";
+      document.getElementById("google-step").style.display = "none";
+
+      // Redirect to home page
+      setTimeout(() => {
+        window.location.href = "home.html";
+      }, 1500);
+    }
+
+    // Load Google Sign-In API
+    function loadGoogleAPI() {
+      const script = document.createElement("script");
+      script.src = "https://accounts.google.com/gsi/client";
+      script.async = true;
+      script.defer = true;
+      document.head.appendChild(script);
+    }
+
+    // Initialize on page load
+    document.addEventListener("DOMContentLoaded", function() {
+      checkExistingSession();
+      loadGoogleAPI();
+    });
+  </script>
+
+</body>
+</html>

@@ -4,126 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VoidSMP - Minecraft Server</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <script>
+    // Check authentication status
+    (function() {
+      const token = localStorage.getItem("voidsmp_token");
+      const captchaVerified = sessionStorage.getItem("voidsmp_captcha_verified");
+
+      if (token && captchaVerified) {
+        // User is authenticated and verified, go to home
+        window.location.replace("home.html");
+      } else {
+        // User needs to sign in
+        window.location.replace("signin.html");
+      }
+    })();
+  </script>
 </head>
 <body>
-
-  <nav class="navbar">
-    <div class="nav-brand">VOID SMP</div>
-    <ul class="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="store.html">Store</a></li>
-      <li><a href="perks.html">Perks</a></li>
-      <li><a href="buy.html">Buy Rank</a></li>
-    </ul>
-    <div class="nav-auth">
-  <div id="loginBtn"></div>
-
-  <div id="userMenu" class="user-menu" style="display:none;">
-    <img id="userAvatar" class="user-avatar">
-    <span id="userName" class="user-name"></span>
-    <button onclick="handleLogout()" class="btn-logout">Logout</button>
-  </div>
-</div>
-</div>
-    </div>
-  </nav>
-
-  <div class="announcement-banner">
-    <div class="announcement-content">
-      <span class="announcement-icon">🏝️</span>
-      <div class="announcement-text">
-        <strong>SKYBLOCK IS NOW LIVE!</strong>
-        <span>Build your island empire in the void. Join now at intel-v2.radheycraft.fun:25408</span>
-      </div>
-      <span class="announcement-icon">🏝️</span>
-    </div>
-  </div>
-
-  <main class="hero">
-    <div class="hero-content">
-      <h1 class="title">VOID SMP</h1>
-      <p class="tagline">Enter the Void. Conquer the Unknown.</p>
-
-      <div class="server-ip-box">
-        <span class="ip-label">Server IP</span>
-        <div class="ip-address" id="serverIp">intel-v2.radheycraft.fun:25408</div>
-        <button class="copy-btn" onclick="copyIP()">Copy IP</button>
-      </div>
-
-      <div class="features">
-        <div class="feature-card">
-          <div class="feature-icon">⚔️</div>
-          <h3>Lifesteal SMP</h3>
-          <p>Steal hearts from your enemies in intense PvP battles</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">👥</div>
-          <h3>Active Community</h3>
-          <p>Join our friendly Discord community with events and giveaways</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🏆</div>
-          <h3>Exclusive Ranks</h3>
-          <p>Unlock special perks and commands with premium ranks</p>
-        </div>
-      </div>
-
-      <div class="cta-buttons">
-        <a href="https://discord.gg/TjmPSByY" target="_blank" class="btn btn-discord">Join Discord</a>
-        <a href="store.html" class="btn btn-secondary">Store</a>
-      </div>
-    </div>
-  </main>
-
-  <section class="about-section">
-    <div class="container">
-      <h2>About VoidSMP</h2>
-      <p>VoidSMP is a Minecraft Lifesteal server where every battle counts. Defeat other players to steal their hearts and become the ultimate survivor. With custom plugins, active staff, and a thriving community, VoidSMP offers an unmatched gaming experience.</p>
-
-      <div class="stats-row">
-        <div class="stat">
-          <span class="stat-number">24/7</span>
-          <span class="stat-label">Uptime</span>
-        </div>
-        <div class="stat">
-          <span class="stat-number">1.20+</span>
-          <span class="stat-label">Version</span>
-        </div>
-        <div class="stat">
-          <span class="stat-number">4</span>
-          <span class="stat-label">Ranks</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="footer-content">
-      <p>&copy; 2025 VoidSMP. All rights reserved.</p>
-      <p>Join our <a href="https://discord.gg/TjmPSByY" target="_blank">Discord</a> for support and updates.</p>
-      <div class="footer-links">
-        <a href="privacy.html">Privacy Policy</a>
-        <span class="footer-divider">|</span>
-        <a href="terms.html">Terms of Service</a>
-      </div>
-    </div>
-  </footer>
-
-  <div class="banner">
-    ⚠️ LIFESTEAL IS UNDER MAINTENANCE ⚠️
-  </div>
-
-  <script>
-    function copyIP() {
-      navigator.clipboard.writeText('intel-v2.radheycraft.fun:25408');
-      const btn = document.querySelector('.copy-btn');
-      btn.textContent = 'Copied!';
-      setTimeout(() => btn.textContent = 'Copy IP', 2000);
-    }
-  </script>
-
-  <script src="auth.js"></script>
+  <p>Redirecting...</p>
 </body>
 </html>

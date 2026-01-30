@@ -3,7 +3,7 @@
 (function () {
   "use strict";
 
-  const CLIENT_ID = "1070356258235-otreum69ja5cha95tntqcabamd03uv7h.apps.googleusercontent.com";
+  const CLIENT_ID = "1070356258235-167rqnfked4jqpmksa1r2lfsr96tspeh.apps.googleusercontent.com";
 
   function loadGoogle() {
     const script = document.createElement("script");

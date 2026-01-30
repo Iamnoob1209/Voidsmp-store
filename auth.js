@@ -58,12 +58,11 @@
   }
 
   window.handleLogin = function () {
-    google.accounts.id.prompt(notification => {
-      if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
-        alert("Google login blocked. Disable popup blocker.");
-      }
-    });
-  };
+  google.accounts.id.renderButton(
+    document.getElementById("loginBtn"),
+    { theme: "outline", size: "large" }
+  );
+};
 
   window.handleLogout = function () {
     localStorage.removeItem("voidsmp_token");

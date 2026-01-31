@@ -10,144 +10,119 @@
 <body>
 
   <nav class="navbar">
-    <div class="container nav-content">
-      <a href="home.html" class="nav-brand">VOID SMP</a>
-      <ul class="nav-links">
-        <li><a href="home.html" class="active">Home</a></li>
-        <li><a href="store.html">Store</a></li>
-        <li><a href="perks.html">Perks</a></li>
-        <li><a href="buy.html">Buy Rank</a></li>
-      </ul>
-      <div class="nav-auth">
-        <div id="loginBtn"></div>
-        <div id="userMenu" class="user-menu" style="display:none;">
-          <img id="userAvatar" class="user-avatar" alt="User">
-          <span id="userName" class="user-name"></span>
-          <button onclick="handleLogout()" class="btn-logout">Logout</button>
-        </div>
-      </div>
+    <div class="nav-brand">VOID SMP</div>
+    <ul class="nav-links">
+      <li><a href="home.html" class="active">Home</a></li>
+      <li><a href="store.html">Store</a></li>
+      <li><a href="perks.html">Perks</a></li>
+      <li><a href="buy.html">Buy Rank</a></li>
+    </ul>
+    <div class="nav-auth">
+  <div id="loginBtn"></div>
+
+  <div id="userMenu" class="user-menu" style="display:none;">
+    <img id="userAvatar" class="user-avatar">
+    <span id="userName" class="user-name"></span>
+    <button onclick="handleLogout()" class="btn-logout">Logout</button>
+  </div>
+</div>
+</div>
     </div>
   </nav>
 
   <div class="announcement-banner">
-    <div class="container">
-      <strong>SKYBLOCK IS NOW LIVE!</strong>
-      <span style="opacity: 0.8; margin-left: 10px;">Build your island empire. Join at intel-v2.radheycraft.fun:25408</span>
+    <div class="announcement-content">
+      <span class="announcement-icon">🏝️</span>
+      <div class="announcement-text">
+        <strong>SKYBLOCK IS NOW LIVE!</strong>
+        <span>Build your island empire in the void. Join now at intel-v2.radheycraft.fun:25408</span>
+      </div>
+      <span class="announcement-icon">🏝️</span>
     </div>
   </div>
 
   <main class="hero">
-    <div class="container">
-      <div class="hero-content animate-fade-up">
-        <h1 class="hero-title gradient-text">VOID SMP</h1>
-        <p class="hero-tagline">Enter the Void. Conquer the Unknown. Join the ultimate Lifesteal experience.</p>
+    <div class="hero-content">
+      <h1 class="title">VOID SMP</h1>
+      <p class="tagline">Enter the Void. Conquer the Unknown.</p>
 
-        <div class="ip-box">
-          <span class="text-dim" style="text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px;">Server IP Address</span>
-          <div class="ip-address" id="serverIp">intel-v2.radheycraft.fun:25408</div>
-          <button class="btn btn-accent mt-4" onclick="copyIP()" id="copyBtn">Copy IP Address</button>
-        </div>
+      <div class="server-ip-box">
+        <span class="ip-label">Server IP</span>
+        <div class="ip-address" id="serverIp">intel-v2.radheycraft.fun:25408</div>
+        <button class="copy-btn" onclick="copyIP()">Copy IP</button>
+      </div>
 
-        <div class="features-grid">
-          <div class="card">
-            <div style="font-size: 2.5rem; margin-bottom: 20px;">⚔️</div>
-            <h3>Lifesteal SMP</h3>
-            <p class="text-muted mt-4">Steal hearts from your enemies in intense PvP battles. Every fight counts in the void.</p>
-          </div>
-          <div class="card">
-            <div style="font-size: 2.5rem; margin-bottom: 20px;">👥</div>
-            <h3>Active Community</h3>
-            <p class="text-muted mt-4">Join 1,000+ players in our friendly Discord community with weekly events.</p>
-          </div>
-          <div class="card">
-            <div style="font-size: 2.5rem; margin-bottom: 20px;">🏆</div>
-            <h3>Premium Ranks</h3>
-            <p class="text-muted mt-4">Unlock exclusive perks, custom tags, and powerful commands to dominate the server.</p>
-          </div>
+      <div class="features">
+        <div class="feature-card">
+          <div class="feature-icon">⚔️</div>
+          <h3>Lifesteal SMP</h3>
+          <p>Steal hearts from your enemies in intense PvP battles</p>
         </div>
+        <div class="feature-card">
+          <div class="feature-icon">👥</div>
+          <h3>Active Community</h3>
+          <p>Join our friendly Discord community with events and giveaways</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🏆</div>
+          <h3>Exclusive Ranks</h3>
+          <p>Unlock special perks and commands with premium ranks</p>
+        </div>
+      </div>
 
-        <div class="mt-8" style="display: flex; gap: 20px; justify-content: center;">
-          <a href="https://discord.gg/TjmPSByY" target="_blank" class="btn btn-primary">Join Discord</a>
-          <a href="store.html" class="btn btn-secondary">Visit Store</a>
-        </div>
+      <div class="cta-buttons">
+        <a href="https://discord.gg/TjmPSByY" target="_blank" class="btn btn-discord">Join Discord</a>
+        <a href="store.html" class="btn btn-secondary">Store</a>
       </div>
     </div>
   </main>
 
-  <section class="about-section" style="padding: 100px 0; background: var(--bg-darker);">
+  <section class="about-section">
     <div class="container">
-      <div class="animate-fade-up">
-        <h2 class="font-heading" style="font-size: 2.5rem; margin-bottom: 24px;">About <span class="gradient-text">VoidSMP</span></h2>
-        <p class="text-muted" style="max-width: 800px; margin: 0 auto 60px; font-size: 1.1rem;">
-          VoidSMP is a premier Minecraft Lifesteal server where survival is an art. Defeat opponents to harvest their hearts, or risk losing your own. With custom-built plugins, a dedicated staff team, and a lag-free experience, we provide the ultimate competitive environment.
-        </p>
+      <h2>About VoidSMP</h2>
+      <p>VoidSMP is a Minecraft Lifesteal server where every battle counts. Defeat other players to steal their hearts and become the ultimate survivor. With custom plugins, active staff, and a thriving community, VoidSMP offers an unmatched gaming experience.</p>
 
-        <div class="features-grid" style="grid-template-columns: repeat(3, 1fr);">
-          <div class="text-center">
-            <div class="font-heading gradient-text" style="font-size: 3rem;">24/7</div>
-            <div class="text-dim" style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem;">Uptime</div>
-          </div>
-          <div class="text-center">
-            <div class="font-heading gradient-text" style="font-size: 3rem;">1.20+</div>
-            <div class="text-dim" style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem;">Version</div>
-          </div>
-          <div class="text-center">
-            <div class="font-heading gradient-text" style="font-size: 3rem;">6</div>
-            <div class="text-dim" style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem;">Ranks</div>
-          </div>
+      <div class="stats-row">
+        <div class="stat">
+          <span class="stat-number">24/7</span>
+          <span class="stat-label">Uptime</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">1.20+</span>
+          <span class="stat-label">Version</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">4</span>
+          <span class="stat-label">Ranks</span>
         </div>
       </div>
     </div>
   </section>
 
   <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <a href="home.html" class="nav-brand" style="margin-bottom: 20px; display: block;">VOID SMP</a>
-          <p class="text-muted">The ultimate Minecraft Lifesteal experience. Join our community and conquer the void.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Navigation</h4>
-          <ul>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="store.html">Store</a></li>
-            <li><a href="perks.html">Perks</a></li>
-            <li><a href="buy.html">Buy Rank</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Support</h4>
-          <ul>
-            <li><a href="https://discord.gg/TjmPSByY" target="_blank">Discord Support</a></li>
-            <li><a href="privacy.html">Privacy Policy</a></li>
-            <li><a href="terms.html">Terms of Service</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 VoidSMP. Not affiliated with Mojang AB.</p>
+    <div class="footer-content">
+      <p>&copy; 2025 VoidSMP. All rights reserved.</p>
+      <p>Join our <a href="https://discord.gg/TjmPSByY" target="_blank">Discord</a> for support and updates.</p>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <span class="footer-divider">|</span>
+        <a href="terms.html">Terms of Service</a>
       </div>
     </div>
   </footer>
 
-  <div class="notice-banner">
-    ⚠️ LIFESTEAL IS CURRENTLY UNDER MAINTENANCE ⚠️
+  <div class="banner">
+    ⚠️ LIFESTEAL IS UNDER MAINTENANCE ⚠️
   </div>
 
   <script>
     function copyIP() {
       navigator.clipboard.writeText('intel-v2.radheycraft.fun:25408');
-      const btn = document.getElementById('copyBtn');
-      btn.textContent = 'IP Copied!';
-      btn.classList.replace('btn-accent', 'btn-primary');
-      setTimeout(() => {
-        btn.textContent = 'Copy IP Address';
-        btn.classList.replace('btn-primary', 'btn-accent');
-      }, 2000);
+      const btn = document.querySelector('.copy-btn');
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = 'Copy IP', 2000);
     }
   </script>
-
 
   <script src="auth.js"></script>
 </body>

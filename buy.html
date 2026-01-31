@@ -10,113 +10,141 @@
 <body>
 
   <nav class="navbar">
-    <div class="container nav-content">
-      <a href="home.html" class="nav-brand">VOID SMP</a>
-      <ul class="nav-links">
-        <li><a href="home.html">Home</a></li>
-        <li><a href="store.html">Store</a></li>
-        <li><a href="perks.html">Perks</a></li>
-        <li><a href="buy.html" class="active">Buy Rank</a></li>
-      </ul>
-      <div class="nav-auth">
-        <div id="loginBtn"></div>
-        <div id="userMenu" class="user-menu" style="display:none;">
-          <img id="userAvatar" class="user-avatar" alt="User">
-          <span id="userName" class="user-name"></span>
-          <button onclick="handleLogout()" class="btn-logout">Logout</button>
-        </div>
+    <div class="nav-brand">VOID SMP</div>
+    <ul class="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="store.html">Store</a></li>
+      <li><a href="perks.html">Perks</a></li>
+      <li><a href="buy.html" class="active">Buy Rank</a></li>
+    </ul>
+    <div class="nav-auth">
+      <button class="btn-login" onclick="handleLogin()" id="loginBtn">Sign In</button>
+      <div class="user-menu" id="userMenu" style="display: none;">
+        <img src="" alt="Profile" class="user-avatar" id="userAvatar">
+        <span class="user-name" id="userName"></span>
+        <button class="btn-logout" onclick="handleLogout()">Sign Out</button>
       </div>
     </div>
   </nav>
 
-  <header class="hero" style="padding: 140px 0 60px;">
-    <div class="container animate-fade-up">
-      <h1 class="hero-title gradient-text">HOW TO BUY</h1>
-      <p class="hero-tagline">Quick & easy process through our Discord ticket system.</p>
-    </div>
+  <header class="page-header">
+    <h1>HOW TO BUY A RANK</h1>
+    <p class="subtitle">Quick & easy process through Discord</p>
   </header>
 
-  <main class="container">
-    <div class="card mb-8">
-      <h2 class="text-center mb-8">Purchase <span class="gradient-text">Process</span></h2>
+  <main class="buy-container">
 
-      <div class="features-grid">
-        <div class="card" style="padding: 24px;">
-          <div style="font-size: 1.5rem; color: var(--primary-light); font-weight: 800; margin-bottom: 12px;">01</div>
-          <h4 class="mb-2">Join Discord</h4>
-          <p class="text-muted small">Join our community server to start the process.</p>
-        </div>
-        <div class="card" style="padding: 24px;">
-          <div style="font-size: 1.5rem; color: var(--primary-light); font-weight: 800; margin-bottom: 12px;">02</div>
-          <h4 class="mb-2">Create Ticket</h4>
-          <p class="text-muted small">Open a ticket in the #create-ticket channel.</p>
-        </div>
-        <div class="card" style="padding: 24px;">
-          <div style="font-size: 1.5rem; color: var(--primary-light); font-weight: 800; margin-bottom: 12px;">03</div>
-          <h4 class="mb-2">Choose Rank</h4>
-          <p class="text-muted small">Specify which rank you want to purchase.</p>
-        </div>
-        <div class="card" style="padding: 24px;">
-          <div style="font-size: 1.5rem; color: var(--primary-light); font-weight: 800; margin-bottom: 12px;">04</div>
-          <h4 class="mb-2">Payment</h4>
-          <p class="text-muted small">Complete payment via UPI or PayPal.</p>
+    <div class="buy-steps">
+      <h2>Purchase Steps</h2>
+
+      <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h3>Join Our Discord Server</h3>
+          <p>Click the button below to join the VoidSMP Discord server. If you're already a member, you can skip this step.</p>
         </div>
       </div>
 
-      <div class="text-center mt-8">
-        <a href="https://discord.gg/TjmPSByY" target="_blank" class="btn btn-primary">Join Discord & Purchase</a>
+      <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h3>Create a Ticket</h3>
+          <p>Go to the <strong>#create-ticket</strong> channel and click on the ticket button to open a new support ticket. Select "Rank Purchase" as the ticket type.</p>
+        </div>
       </div>
+
+      <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h3>Choose Your Rank</h3>
+          <p>In your ticket, let our staff know which rank you want to purchase:</p>
+          <ul style="margin-top: 10px; color: #ccc;">
+            <li><strong style="color: #a78bfa;">HERO</strong> - ₹50</li>
+            <li><strong style="color: #22d3ee;">LEGEND</strong> - ₹90</li>
+            <li><strong style="color: #fb923c;">VIP AND VIP +</strong> - ₹110/₹149</li>
+            <li><strong style="color: #ffd700;">MEGA VIP</strong> - ₹199</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">4</div>
+        <div class="step-content">
+          <h3>Complete Payment</h3>
+          <p>Our staff will provide you with payment details. Complete the payment through the provided method (UPI, PayPal, etc.).</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">5</div>
+        <div class="step-content">
+          <h3>Send Payment Proof</h3>
+          <p>After payment, send a screenshot of your payment confirmation in the ticket. Include your Minecraft username so we can apply the rank to the correct account.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">6</div>
+        <div class="step-content">
+          <h3>Receive Your Rank</h3>
+          <p>Once payment is verified, your rank will be applied within a few minutes. You'll receive a confirmation message and can start enjoying your new perks!</p>
+        </div>
+      </div>
+
     </div>
 
-    <h2 class="text-center mb-8">Frequently Asked <span class="gradient-text">Questions</span></h2>
-    <div class="features-grid">
-      <div class="card">
-        <h4 style="color: var(--primary-light); margin-bottom: 12px;">How long does it take?</h4>
-        <p class="text-muted">Ranks are usually applied within 5-30 minutes after verification.</p>
-      </div>
-      <div class="card">
-        <h4 style="color: var(--primary-light); margin-bottom: 12px;">Are ranks permanent?</h4>
-        <p class="text-muted">Yes, all ranks are permanent and will never expire on your account.</p>
-      </div>
-      <div class="card">
-        <h4 style="color: var(--primary-light); margin-bottom: 12px;">Can I upgrade?</h4>
-        <p class="text-muted">Yes, you only pay the difference between your current rank and the new one.</p>
-      </div>
+    <div class="discord-cta">
+      <h2>Ready to Get Started?</h2>
+      <p>Join our Discord server and create a ticket to purchase your rank today!</p>
+      <a href="https://discord.gg/TjmPSByY" target="_blank" class="btn btn-discord" style="font-size: 18px; padding: 18px 40px;">
+        Join Discord & Create Ticket
+      </a>
     </div>
+
+    <!-- FAQ Section -->
+    <div style="margin-top: 50px;">
+      <h2 style="font-family: 'Orbitron', sans-serif; color: #c084ff; text-align: center; margin-bottom: 30px;">Frequently Asked Questions</h2>
+
+      <div class="rank-card">
+        <h3 style="color: #c084ff; margin-bottom: 10px;">How long does it take to receive my rank?</h3>
+        <p style="color: #ccc;">Once payment is verified, ranks are usually applied within 5-30 minutes depending on staff availability. During peak times, it may take up to a few hours.</p>
+      </div>
+
+      <div class="rank-card">
+        <h3 style="color: #c084ff; margin-bottom: 10px;">Is my rank permanent?</h3>
+        <p style="color: #ccc;">Yes! All ranks are permanent and will never expire. You keep your perks forever.</p>
+      </div>
+
+      <div class="rank-card">
+        <h3 style="color: #c084ff; margin-bottom: 10px;">Can I upgrade my rank later?</h3>
+        <p style="color: #ccc;">Absolutely! If you want to upgrade to a higher rank, just create another ticket. You'll only need to pay the difference between your current rank and the new one.</p>
+      </div>
+
+      <div class="rank-card">
+        <h3 style="color: #c084ff; margin-bottom: 10px;">What payment methods are accepted?</h3>
+        <p style="color: #ccc;">We accept UPI, PayPal, and other payment methods. Ask in your ticket for available options.</p>
+      </div>
+
+      <div class="rank-card">
+        <h3 style="color: #c084ff; margin-bottom: 10px;">I have more questions. How can I contact support?</h3>
+        <p style="color: #ccc;">Create a ticket in our Discord server and our staff will be happy to help with any questions!</p>
+      </div>
+
+    </div>
+
   </main>
 
-
   <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <a href="home.html" class="nav-brand" style="margin-bottom: 20px; display: block;">VOID SMP</a>
-          <p class="text-muted">The ultimate Minecraft Lifesteal experience. Join our community and conquer the void.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Navigation</h4>
-          <ul>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="store.html">Store</a></li>
-            <li><a href="perks.html">Perks</a></li>
-            <li><a href="buy.html">Buy Rank</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Support</h4>
-          <ul>
-            <li><a href="https://discord.gg/TjmPSByY" target="_blank">Discord Support</a></li>
-            <li><a href="privacy.html">Privacy Policy</a></li>
-            <li><a href="terms.html">Terms of Service</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 VoidSMP. Not affiliated with Mojang AB.</p>
+    <div class="footer-content">
+      <p>&copy; 2025 VoidSMP. All rights reserved.</p>
+      <p>Join our <a href="https://discord.gg/TjmPSByY" target="_blank">Discord</a> for support and updates.</p>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <span class="footer-divider">|</span>
+        <a href="terms.html">Terms of Service</a>
       </div>
     </div>
   </footer>
-
 
   <div class="banner">
     ⚠️ LIFESTEAL IS UNDER MAINTENANCE ⚠️

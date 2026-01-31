@@ -10,71 +10,64 @@
 <body>
 
   <nav class="navbar">
-    <div class="container nav-content">
-      <a href="home.html" class="nav-brand">VOID SMP</a>
-      <ul class="nav-links">
-        <li><a href="home.html">Home</a></li>
-        <li><a href="store.html" class="active">Store</a></li>
-        <li><a href="perks.html">Perks</a></li>
-        <li><a href="buy.html">Buy Rank</a></li>
-      </ul>
-      <div class="nav-auth">
-        <div id="loginBtn"></div>
-        <div id="userMenu" class="user-menu" style="display:none;">
-          <img id="userAvatar" class="user-avatar" alt="User">
-          <span id="userName" class="user-name"></span>
-          <button onclick="handleLogout()" class="btn-logout">Logout</button>
-        </div>
+    <div class="nav-brand">VOID SMP</div>
+    <ul class="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="store.html" class="active">Store</a></li>
+      <li><a href="perks.html">Perks</a></li>
+      <li><a href="buy.html">Buy Rank</a></li>
+    </ul>
+    <div class="nav-auth">
+      <button class="btn-login" onclick="handleLogin()" id="loginBtn">Sign In</button>
+      <div class="user-menu" id="userMenu" style="display: none;">
+        <img src="" alt="Profile" class="user-avatar" id="userAvatar">
+        <span class="user-name" id="userName"></span>
+        <button class="btn-logout" onclick="handleLogout()">Sign Out</button>
       </div>
     </div>
   </nav>
 
-  <header class="hero" style="padding: 140px 0 60px;">
-    <div class="container animate-fade-up">
-      <h1 class="hero-title gradient-text">VOID STORE</h1>
-      <p class="hero-tagline">Support the server and unlock legendary perks across all game modes.</p>
-    </div>
+  <header class="page-header">
+    <h1>VOID SMP STORE</h1>
+    <p class="subtitle">Choose your game mode and support the server!</p>
   </header>
 
-  <main class="container">
+  <main class="store-container">
     <!-- Donation Progress Scale -->
-    <div class="card mb-8 text-center" style="max-width: 800px; margin-left: auto; margin-right: auto;">
-      <h3 class="mb-4">Monthly Goal</h3>
-      <div style="height: 12px; background: rgba(0,0,0,0.3); border-radius: 10px; overflow: hidden; border: 1px solid var(--surface-border);">
-        <div class="donation-progress" style="width: 15%; height: 100%; background: linear-gradient(90deg, var(--primary), var(--primary-light));"></div>
+    <div class="donation-scale-container">
+      <h3>Donation Progress</h3>
+      <div class="donation-scale">
+        <div class="donation-progress" style="width: 0%;"></div>
       </div>
-      <div style="display: flex; justify-content: space-between; margin-top: 12px; font-size: 0.85rem; color: var(--text-dim);">
-        <span>₹1,500 raised</span>
-        <span>Goal: ₹10,000</span>
+      <div class="donation-labels">
+        <span>0%</span>
+        <span>Goal: Server Upgrades</span>
+        <span>100%</span>
       </div>
-      <p class="mt-4" style="color: var(--accent); font-weight: 600;">15% of our monthly server cost covered!</p>
+      <p class="donation-amount">₹0 raised</p>
     </div>
 
     <!-- Game Mode Selection -->
     <div class="gamemode-selection">
-      <h2 class="text-center mb-8">Select <span class="gradient-text">Game Mode</span></h2>
-      <div class="features-grid">
-        <div class="card text-center" onclick="showGameMode('skyblock')" style="cursor: pointer; border-color: #10b98122;">
-          <div style="font-size: 3rem; margin-bottom: 20px;">🏝️</div>
-          <h3 style="color: #34d399;">Skyblock</h3>
-          <p class="text-muted mt-2">Build your island empire</p>
-          <button class="btn btn-secondary mt-4">Browse Store</button>
+      <h2>Select Game Mode</h2>
+      <div class="gamemode-cards">
+        <div class="gamemode-card gamemode-skyblock" onclick="showGameMode('skyblock')">
+          <div class="gamemode-icon">🏝️</div>
+          <h3>Skyblock</h3>
+          <p>Build your island empire</p>
         </div>
-        <div class="card text-center" onclick="showGameMode('survival')" style="cursor: pointer; border-color: #22c55e22;">
-          <div style="font-size: 3rem; margin-bottom: 20px;">🌲</div>
-          <h3 style="color: #4ade80;">Survival</h3>
-          <p class="text-muted mt-2">Classic survival experience</p>
-          <button class="btn btn-secondary mt-4">Browse Store</button>
+        <div class="gamemode-card gamemode-survival" onclick="showGameMode('survival')">
+          <div class="gamemode-icon">🌲</div>
+          <h3>Survival</h3>
+          <p>Classic survival experience</p>
         </div>
-        <div class="card text-center" onclick="showGameMode('lifesteal')" style="cursor: pointer; border-color: #ef444422;">
-          <div style="font-size: 3rem; margin-bottom: 20px;">❤️</div>
-          <h3 style="color: #f87171;">Lifesteal</h3>
-          <p class="text-muted mt-2">Steal hearts from enemies</p>
-          <button class="btn btn-secondary mt-4">Browse Store</button>
+        <div class="gamemode-card gamemode-lifesteal" onclick="showGameMode('lifesteal')">
+          <div class="gamemode-icon">❤️</div>
+          <h3>Lifesteal</h3>
+          <p>Steal hearts from enemies</p>
         </div>
       </div>
     </div>
-
 
     <!-- Skyblock Section - Coming Soon -->
     <div id="skyblock-section" class="gamemode-content" style="display: none;">
@@ -225,36 +218,43 @@
       </div>
 
       <!-- Items Section -->
-      <div id="items-section" class="mt-8">
-        <h2 class="text-center mb-8">Exclusive <span class="gradient-text">Items</span></h2>
-        
-        <div class="features-grid">
-          <div class="card text-center">
-            <div style="font-size: 2.5rem; margin-bottom: 20px;">🗺️</div>
-            <h3>Land Claim</h3>
-            <div class="rank-price mt-2">₹10 <small style="font-size: 0.8rem; color: var(--text-dim);">/ chunk</small></div>
-            <p class="text-muted mt-4">Claim an additional chunk to protect your builds and resources.</p>
-            <a href="buy.html" class="btn btn-primary mt-4">Purchase Now</a>
+      <div id="items-section" class="items-section">
+        <h2 class="section-title">Items</h2>
+        <p class="section-subtitle">Purchase in-game items to enhance your gameplay</p>
+
+        <div class="items-grid">
+          <div class="item-card item-landclaim">
+            <div class="item-icon">🗺️</div>
+            <div class="item-header">
+              <h3>Land Claim</h3>
+              <span class="item-price">₹10</span>
+            </div>
+            <p class="item-description">Claim an additional chunk to protect your builds and resources.</p>
+            <span class="item-unit">per chunk</span>
+            <a href="buy.html" class="btn btn-primary">Buy Now</a>
           </div>
 
-          <div class="card text-center">
-            <div style="font-size: 2.5rem; margin-bottom: 20px;">🐦</div>
-            <h3>Elytra</h3>
-            <div class="rank-price mt-2">₹35</div>
-            <p class="text-muted mt-4">Soar through the skies with these rare wings from the End.</p>
-            <a href="buy.html" class="btn btn-primary mt-4">Purchase Now</a>
+          <div class="item-card item-elytra">
+            <div class="item-icon">🐦</div>
+            <div class="item-header">
+              <h3>Elytra</h3>
+              <span class="item-price">₹35</span>
+            </div>
+            <p class="item-description">Soar through the skies with these rare wings from the End.</p>
+            <a href="buy.html" class="btn btn-primary">Buy Now</a>
           </div>
 
-          <div class="card text-center">
-            <div style="font-size: 2.5rem; margin-bottom: 20px;">🔨</div>
-            <h3>Mace</h3>
-            <div class="rank-price mt-2">₹59</div>
-            <p class="text-muted mt-4">A powerful weapon that deals massive damage from above.</p>
-            <a href="buy.html" class="btn btn-primary mt-4">Purchase Now</a>
+          <div class="item-card item-mace">
+            <div class="item-icon">🔨</div>
+            <div class="item-header">
+              <h3>Mace</h3>
+              <span class="item-price">₹59</span>
+            </div>
+            <p class="item-description">A powerful weapon that deals massive damage from above.</p>
+            <a href="buy.html" class="btn btn-primary">Buy Now</a>
           </div>
         </div>
       </div>
-
 
       <button class="btn btn-secondary back-btn" onclick="hideGameMode()">← Back to Game Modes</button>
     </div>
@@ -273,40 +273,20 @@
   </section>
 
   <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <a href="home.html" class="nav-brand" style="margin-bottom: 20px; display: block;">VOID SMP</a>
-          <p class="text-muted">The ultimate Minecraft Lifesteal experience. Join our community and conquer the void.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Navigation</h4>
-          <ul>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="store.html">Store</a></li>
-            <li><a href="perks.html">Perks</a></li>
-            <li><a href="buy.html">Buy Rank</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Support</h4>
-          <ul>
-            <li><a href="https://discord.gg/TjmPSByY" target="_blank">Discord Support</a></li>
-            <li><a href="privacy.html">Privacy Policy</a></li>
-            <li><a href="terms.html">Terms of Service</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 VoidSMP. Not affiliated with Mojang AB.</p>
+    <div class="footer-content">
+      <p>&copy; 2025 VoidSMP. All rights reserved.</p>
+      <p>Join our <a href="https://discord.gg/TjmPSByY" target="_blank">Discord</a> for support and updates.</p>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <span class="footer-divider">|</span>
+        <a href="terms.html">Terms of Service</a>
       </div>
     </div>
   </footer>
 
-  <div class="notice-banner">
-    ⚠️ LIFESTEAL IS CURRENTLY UNDER MAINTENANCE ⚠️
+  <div class="banner">
+    ⚠️ LIFESTEAL IS UNDER MAINTENANCE ⚠️
   </div>
-
 
   <script>
     function showGameMode(mode) {

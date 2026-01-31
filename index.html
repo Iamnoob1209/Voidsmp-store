@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VoidSMP - Professional Minecraft Experience</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>VoidSMP - Minecraft Server</title>
   <script>
     // Check authentication status
     (function() {
@@ -12,18 +11,16 @@
       const captchaVerified = sessionStorage.getItem("voidsmp_captcha_verified");
 
       if (token && captchaVerified) {
+        // User is authenticated and verified, go to home
         window.location.replace("home.html");
       } else {
+        // User needs to sign in
         window.location.replace("signin.html");
       }
     })();
   </script>
 </head>
-<body style="display: flex; align-items: center; justify-content: center; height: 100vh;">
-  <div class="text-center animate-fade-up">
-    <h1 class="gradient-text font-heading" style="font-size: 3rem;">VOID SMP</h1>
-    <p class="text-dim mt-4">Initializing connection to the void...</p>
-  </div>
+<body>
+  <p>Redirecting...</p>
 </body>
-
 </html>

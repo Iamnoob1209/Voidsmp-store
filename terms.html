@@ -10,93 +10,188 @@
 <body>
 
   <nav class="navbar">
-    <div class="container nav-content">
-      <a href="home.html" class="nav-brand">VOID SMP</a>
-      <ul class="nav-links">
-        <li><a href="home.html">Home</a></li>
-        <li><a href="store.html">Store</a></li>
-        <li><a href="perks.html">Perks</a></li>
-        <li><a href="buy.html">Buy Rank</a></li>
-      </ul>
-      <div class="nav-auth">
-        <div id="loginBtn"></div>
-        <div id="userMenu" class="user-menu" style="display:none;">
-          <img id="userAvatar" class="user-avatar" alt="User">
-          <span id="userName" class="user-name"></span>
-          <button onclick="handleLogout()" class="btn-logout">Logout</button>
-        </div>
+    <div class="nav-brand">VOID SMP</div>
+    <ul class="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="store.html">Store</a></li>
+      <li><a href="perks.html">Perks</a></li>
+      <li><a href="buy.html">Buy Rank</a></li>
+    </ul>
+    <div class="nav-auth">
+      <button class="btn-login" onclick="handleLogin()" id="loginBtn">Sign In</button>
+      <div class="user-menu" id="userMenu" style="display: none;">
+        <img src="" alt="Profile" class="user-avatar" id="userAvatar">
+        <span class="user-name" id="userName"></span>
+        <button class="btn-logout" onclick="handleLogout()">Sign Out</button>
       </div>
     </div>
   </nav>
 
-  <header class="hero" style="padding: 140px 0 60px;">
-    <div class="container animate-fade-up">
-      <h1 class="hero-title gradient-text">TERMS OF SERVICE</h1>
-      <p class="hero-tagline">Last updated: January 2026 • Rules and guidelines for our services.</p>
-    </div>
+  <header class="page-header">
+    <h1>TERMS OF SERVICE</h1>
+    <p class="subtitle">Please read these terms carefully</p>
   </header>
 
-  <main class="container">
-    <div class="card" style="padding: 48px; max-width: 900px; margin: 0 auto;">
-      <section class="mb-8">
-        <h2 style="color: var(--primary-light); margin-bottom: 20px;">1. Agreement</h2>
-        <p class="text-muted">By accessing VoidSMP, you agree to follow these Terms of Service. If you do not agree, please do not use our services.</p>
+  <main class="legal-container">
+    <div class="legal-content">
+      <p class="legal-updated">Last updated: January 2025</p>
+
+      <section class="legal-section">
+        <h2>1. Agreement to Terms</h2>
+        <p>By accessing or using VoidSMP's website and Minecraft server services ("Services"), you agree to be bound by these Terms of Service ("Terms"). If you disagree with any part of these terms, you do not have permission to access our Services.</p>
       </section>
 
-      <section class="mb-8">
-        <h2 style="color: var(--primary-light); margin-bottom: 20px;">2. Purchases</h2>
-        <p class="text-muted mb-4">All purchases are digital and delivered in-game. Due to the nature of digital goods, all sales are final.</p>
-        <ul class="perks-list">
-          <li><i>✓</i> Ranks are permanent on your account</li>
-          <li><i>✓</i> Chargebacks result in permanent bans</li>
-          <li><i>✓</i> We reserve the right to modify perks for balance</li>
+      <section class="legal-section">
+        <h2>2. Description of Services</h2>
+        <p>VoidSMP provides:</p>
+        <ul>
+          <li>A Minecraft multiplayer server experience with various game modes (Lifesteal, Skyblock, Survival)</li>
+          <li>Premium ranks and in-game items available for purchase</li>
+          <li>A community Discord server for support and interaction</li>
+          <li>Website services including account authentication</li>
         </ul>
       </section>
 
-      <section class="mb-8">
-        <h2 style="color: var(--primary-light); margin-bottom: 20px;">3. Player Conduct</h2>
-        <p class="text-muted">Players must follow all in-game rules. Hacking, griefing (where not permitted), and harassment are strictly prohibited.</p>
+      <section class="legal-section">
+        <h2>3. Account Registration</h2>
+        <h3>3.1 Google Sign-In</h3>
+        <p>You may create an account using Google OAuth. By doing so, you authorize us to access certain Google account information as described in our Privacy Policy. You are responsible for maintaining the confidentiality of your account credentials.</p>
+
+        <h3>3.2 Minecraft Account</h3>
+        <p>To use our Minecraft server services, you must have a valid Minecraft account. You are responsible for all activities that occur under your Minecraft username on our server.</p>
+
+        <h3>3.3 Account Security</h3>
+        <p>You are responsible for maintaining the security of your accounts. You must immediately notify us of any unauthorized use of your account or any other breach of security.</p>
       </section>
 
-      <section>
-        <h2 style="color: var(--primary-light); margin-bottom: 20px;">4. Disclaimer</h2>
-        <p class="text-muted">VoidSMP is not affiliated with Mojang AB. Use our services at your own risk.</p>
+      <section class="legal-section">
+        <h2>4. Purchases and Payments</h2>
+        <h3>4.1 Rank and Item Purchases</h3>
+        <p>All purchases of ranks and in-game items are processed through our Discord ticketing system. Prices are displayed in Indian Rupees (INR) and are subject to change without notice.</p>
+
+        <h3>4.2 Payment Methods</h3>
+        <p>We accept various payment methods including UPI and PayPal. Payment processing is handled by third-party providers, and you agree to their respective terms of service.</p>
+
+        <h3>4.3 Delivery</h3>
+        <p>Purchased ranks and items will be delivered to your Minecraft account after payment verification. Delivery times may vary based on staff availability.</p>
+
+        <h3>4.4 Refund Policy</h3>
+        <p>All sales are final. Due to the digital nature of our products and the immediate delivery of virtual items, we generally do not offer refunds. However, we may consider refunds on a case-by-case basis under exceptional circumstances. Contact us through Discord to discuss any concerns.</p>
+
+        <h3>4.5 Chargebacks</h3>
+        <p>Initiating a chargeback or payment dispute without first contacting us may result in immediate termination of your access to our Services and permanent ban from our server.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>5. Server Rules and Conduct</h2>
+        <p>When using our Minecraft server, you agree to:</p>
+        <ul>
+          <li>Not use hacks, cheats, exploits, or unauthorized modifications</li>
+          <li>Not abuse bugs or glitches - report them to staff instead</li>
+          <li>Treat all players and staff with respect</li>
+          <li>Not engage in harassment, bullying, or discriminatory behavior</li>
+          <li>Not spam, advertise, or promote other servers</li>
+          <li>Not share personal information of others without consent</li>
+          <li>Not impersonate staff members or other players</li>
+          <li>Not attempt to crash, lag, or disrupt the server</li>
+          <li>Follow all rules posted in-game and on Discord</li>
+        </ul>
+        <p>Violation of these rules may result in warnings, temporary bans, or permanent bans at the discretion of our staff.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>6. Rank and Perk Terms</h2>
+        <h3>6.1 Permanent Ranks</h3>
+        <p>All purchased ranks are permanent and will not expire under normal circumstances. However, we reserve the right to modify, adjust, or remove rank perks at any time to maintain game balance.</p>
+
+        <h3>6.2 Rank Transferability</h3>
+        <p>Ranks are non-transferable between accounts. They are tied to the Minecraft username specified at the time of purchase.</p>
+
+        <h3>6.3 Server Resets</h3>
+        <p>In the event of a server reset or new season, ranks will be retained but in-game items and progress may be reset. We will provide advance notice when possible.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>7. Intellectual Property</h2>
+        <p>All content on our website and server, including but not limited to logos, text, graphics, and software, is the property of VoidSMP or its content suppliers and is protected by intellectual property laws. Minecraft is a trademark of Mojang AB. VoidSMP is not affiliated with or endorsed by Mojang AB.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>8. Disclaimer of Warranties</h2>
+        <p>Our Services are provided "as is" and "as available" without warranties of any kind, either express or implied. We do not guarantee that:</p>
+        <ul>
+          <li>The Services will be uninterrupted or error-free</li>
+          <li>Defects will be corrected</li>
+          <li>The server will be free of viruses or other harmful components</li>
+          <li>The Services will meet your specific requirements</li>
+        </ul>
+      </section>
+
+      <section class="legal-section">
+        <h2>9. Limitation of Liability</h2>
+        <p>To the fullest extent permitted by law, VoidSMP shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of data, profits, or goodwill, arising from your use of our Services.</p>
+        <p>Our total liability for any claims arising from your use of our Services shall not exceed the amount you paid to us in the twelve (12) months preceding the claim.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>10. Indemnification</h2>
+        <p>You agree to indemnify, defend, and hold harmless VoidSMP, its officers, directors, employees, and agents from any claims, damages, losses, liabilities, and expenses (including attorneys' fees) arising from your use of our Services or violation of these Terms.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>11. Termination</h2>
+        <p>We reserve the right to terminate or suspend your access to our Services immediately, without prior notice or liability, for any reason, including but not limited to:</p>
+        <ul>
+          <li>Breach of these Terms</li>
+          <li>Violation of server rules</li>
+          <li>Fraudulent or illegal activity</li>
+          <li>Abusive behavior towards staff or players</li>
+        </ul>
+        <p>Upon termination, your right to use our Services will immediately cease. Purchased ranks are non-refundable in cases of termination due to Terms violations.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>12. Modifications to Terms</h2>
+        <p>We reserve the right to modify these Terms at any time. We will notify users of significant changes by posting the updated Terms on our website and updating the "Last updated" date. Your continued use of our Services after such modifications constitutes acceptance of the updated Terms.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>13. Governing Law</h2>
+        <p>These Terms shall be governed by and construed in accordance with applicable laws, without regard to conflict of law principles. Any disputes arising from these Terms shall be resolved through good-faith negotiation or, if necessary, through appropriate legal channels.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>14. Severability</h2>
+        <p>If any provision of these Terms is found to be unenforceable or invalid, that provision shall be limited or eliminated to the minimum extent necessary, and the remaining provisions shall remain in full force and effect.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>15. Contact Information</h2>
+        <p>For questions about these Terms of Service, please contact us:</p>
+        <ul>
+          <li>Through our Discord server: <a href="https://discord.gg/TjmPSByY" target="_blank">discord.gg/TjmPSByY</a></li>
+          <li>By creating a support ticket in Discord</li>
+        </ul>
+      </section>
+
+      <section class="legal-section">
+        <h2>16. Acknowledgment</h2>
+        <p>By using our Services, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service and our Privacy Policy.</p>
       </section>
     </div>
   </main>
 
-
   <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <a href="home.html" class="nav-brand" style="margin-bottom: 20px; display: block;">VOID SMP</a>
-          <p class="text-muted">The ultimate Minecraft Lifesteal experience. Join our community and conquer the void.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Navigation</h4>
-          <ul>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="store.html">Store</a></li>
-            <li><a href="perks.html">Perks</a></li>
-            <li><a href="buy.html">Buy Rank</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Support</h4>
-          <ul>
-            <li><a href="https://discord.gg/TjmPSByY" target="_blank">Discord Support</a></li>
-            <li><a href="privacy.html">Privacy Policy</a></li>
-            <li><a href="terms.html">Terms of Service</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 VoidSMP. Not affiliated with Mojang AB.</p>
+    <div class="footer-content">
+      <p>&copy; 2025 VoidSMP. All rights reserved.</p>
+      <p>Join our <a href="https://discord.gg/TjmPSByY" target="_blank">Discord</a> for support and updates.</p>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <span class="footer-divider">|</span>
+        <a href="terms.html">Terms of Service</a>
       </div>
     </div>
   </footer>
-
 
   <div class="banner">
     ⚠️ LIFESTEAL IS UNDER MAINTENANCE ⚠️

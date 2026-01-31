@@ -3,7 +3,7 @@
 (function () {
   "use strict";
 
-  const CLIENT_ID = "1070356258235-167rqnfked4jqpmksa1r2lfsr96tspeh.apps.googleusercontent.com";
+  const CLIENT_ID = "1070356258235-iem5g6b0rh7r3pjju4747i8vv77oai7u.apps.googleusercontent.com";
 
   // Protected pages that require authentication
   const protectedPages = ["home.html", "store.html", "perks.html", "buy.html", "ranks.html"];
@@ -111,17 +111,26 @@
 
   function showNotification(msg, type) {
     const n = document.createElement("div");
+    n.className = "animate-fade-up";
     n.textContent = msg;
     n.style.position = "fixed";
-    n.style.top = "80px";
-    n.style.right = "20px";
-    n.style.padding = "10px 20px";
-    n.style.background = type === "success" ? "#10b981" : "#ef4444";
+    n.style.bottom = "40px";
+    n.style.right = "40px";
+    n.style.padding = "16px 32px";
+    n.style.background = type === "success" ? "linear-gradient(135deg, #10b981, #059669)" : "linear-gradient(135deg, #ef4444, #dc2626)";
     n.style.color = "white";
-    n.style.borderRadius = "8px";
+    n.style.borderRadius = "12px";
     n.style.zIndex = "10000";
+    n.style.fontWeight = "600";
+    n.style.boxShadow = "0 10px 30px rgba(0,0,0,0.5)";
+    n.style.backdropFilter = "blur(10px)";
     document.body.appendChild(n);
-    setTimeout(() => n.remove(), 2000);
+    setTimeout(() => {
+      n.style.opacity = "0";
+      n.style.transform = "translateY(20px)";
+      n.style.transition = "all 0.4s ease";
+      setTimeout(() => n.remove(), 400);
+    }, 3000);
   }
 
   loadGoogle();

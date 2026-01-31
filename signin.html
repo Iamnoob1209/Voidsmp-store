@@ -10,55 +10,55 @@
 <body class="signin-page">
 
   <main class="signin-container">
-    <div class="signin-card">
-      <div class="signin-header">
-        <h1 class="signin-title">VOID SMP</h1>
-        <p class="signin-tagline">Enter the Void. Conquer the Unknown.</p>
+    <div class="card" style="max-width: 480px; margin: 0 auto; padding: 48px;">
+      <div class="text-center mb-8">
+        <h1 class="gradient-text font-heading" style="font-size: 2.5rem; margin-bottom: 8px;">VOID SMP</h1>
+        <p class="text-dim" style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px;">Enter the Void</p>
       </div>
 
       <div class="signin-content">
-        <h2>Welcome</h2>
-        <p class="signin-description">Please verify you're human and sign in with Google to continue.</p>
+        <h2 class="mb-4">Welcome Back</h2>
+        <p class="text-muted mb-8" style="font-size: 0.95rem;">Please verify you're human and sign in with Google to continue.</p>
 
-        <div id="captcha-step" class="signin-step">
-          <div class="step-label">Step 1: Verify you're human</div>
+        <div id="captcha-step" class="card mb-4" style="padding: 24px; border-color: var(--surface-border);">
+          <div class="text-dim mb-4" style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase;">Step 1: Security Check</div>
           <div class="captcha-wrapper">
-            <div class="custom-captcha">
-              <div class="captcha-checkbox-container">
-                <div id="captcha-checkbox" class="captcha-checkbox" onclick="onCaptchaClick()">
-                  <span id="captcha-checkmark" class="captcha-checkmark"></span>
+            <div class="custom-captcha" style="width: 100%;">
+              <div class="captcha-checkbox-container" style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                <div id="captcha-checkbox" class="captcha-checkbox" onclick="onCaptchaClick()" style="width: 24px; height: 24px; border: 2px solid var(--primary); border-radius: 4px; cursor: pointer;">
+                  <span id="captcha-checkmark" class="captcha-checkmark" style="color: #10b981; font-weight: bold; display: flex; justify-content: center; align-items: center; height: 100%;"></span>
                 </div>
-                <span class="captcha-label">I'm not a robot</span>
+                <span class="captcha-label" style="font-size: 0.95rem;">I'm not a robot</span>
               </div>
-              <div id="captcha-code-section" class="captcha-code-section" style="display: none;">
-                <div class="captcha-code-display">
-                  <span id="captcha-code" class="captcha-code"></span>
+              <div id="captcha-code-section" class="captcha-code-section" style="display: none; flex-direction: column; gap: 12px;">
+                <div class="captcha-code-display" style="background: rgba(0,0,0,0.3); padding: 12px; border-radius: 8px; text-align: center;">
+                  <span id="captcha-code" class="captcha-code" style="font-family: 'Orbitron', monospace; font-size: 1.5rem; letter-spacing: 4px; color: var(--accent);"></span>
                 </div>
                 <div class="captcha-input-wrapper">
-                  <input type="text" id="captcha-input" class="captcha-input" placeholder="Enter code" maxlength="4" oninput="verifyCaptchaCode()">
+                  <input type="text" id="captcha-input" class="btn btn-secondary" style="width: 100%; text-align: center; text-transform: uppercase; letter-spacing: 4px;" placeholder="Enter code" maxlength="4" oninput="verifyCaptchaCode()">
                 </div>
               </div>
-              <div id="captcha-error" class="captcha-error" style="display: none;">Please fill the captcha</div>
+              <div id="captcha-error" class="text-center mt-2" style="display: none; color: #ef4444; font-size: 0.85rem;">Verification failed. Try again.</div>
             </div>
           </div>
         </div>
 
-        <div id="google-step" class="signin-step disabled">
-          <div class="step-label">Step 2: Sign in with Google</div>
-          <div id="googleSignInBtn" class="google-signin-wrapper"></div>
+        <div id="google-step" class="card disabled" style="padding: 24px; border-color: var(--surface-border); opacity: 0.5;">
+          <div class="text-dim mb-4" style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase;">Step 2: Authenticate</div>
+          <div id="googleSignInBtn" class="google-signin-wrapper" style="display: flex; justify-content: center;"></div>
         </div>
 
-        <div id="signin-success" class="signin-success" style="display: none;">
-          <div class="success-icon">&#10003;</div>
-          <p>Verification complete! Redirecting...</p>
+        <div id="signin-success" class="text-center mt-4" style="display: none; color: #10b981; font-weight: 600;">
+          Verification complete! Redirecting...
         </div>
       </div>
 
-      <div class="signin-footer">
-        <p>By signing in, you agree to our <a href="terms.html">Terms of Service</a> and <a href="privacy.html">Privacy Policy</a>.</p>
+      <div class="mt-8 text-center" style="font-size: 0.85rem; color: var(--text-dim);">
+        <p>By signing in, you agree to our <a href="terms.html" style="color: var(--primary-light);">Terms</a> and <a href="privacy.html" style="color: var(--primary-light);">Privacy</a>.</p>
       </div>
     </div>
   </main>
+
 
   <script>
     let captchaVerified = false;

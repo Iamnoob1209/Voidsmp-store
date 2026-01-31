@@ -10,229 +10,183 @@
 <body>
 
   <nav class="navbar">
-    <div class="nav-brand">VOID SMP</div>
-    <ul class="nav-links">
-      <li><a href="home.html">Home</a></li>
-      <li><a href="store.html">Store</a></li>
-      <li><a href="perks.html" class="active">Perks</a></li>
-      <li><a href="buy.html">Buy Rank</a></li>
-    </ul>
-    <div class="nav-auth">
-      <button class="btn-login" onclick="handleLogin()" id="loginBtn">Sign In</button>
-      <div class="user-menu" id="userMenu" style="display: none;">
-        <img src="" alt="Profile" class="user-avatar" id="userAvatar">
-        <span class="user-name" id="userName"></span>
-        <button class="btn-logout" onclick="handleLogout()">Sign Out</button>
+    <div class="container nav-content">
+      <a href="home.html" class="nav-brand">VOID SMP</a>
+      <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="store.html">Store</a></li>
+        <li><a href="perks.html" class="active">Perks</a></li>
+        <li><a href="buy.html">Buy Rank</a></li>
+      </ul>
+      <div class="nav-auth">
+        <div id="loginBtn"></div>
+        <div id="userMenu" class="user-menu" style="display:none;">
+          <img id="userAvatar" class="user-avatar" alt="User">
+          <span id="userName" class="user-name"></span>
+          <button onclick="handleLogout()" class="btn-logout">Logout</button>
+        </div>
       </div>
     </div>
   </nav>
 
-  <header class="page-header">
-    <h1>ALL RANK PERKS</h1>
-    <p class="subtitle">Compare all benefits across different ranks</p>
+  <header class="hero" style="padding: 140px 0 60px;">
+    <div class="container animate-fade-up">
+      <h1 class="hero-title gradient-text">RANK PERKS</h1>
+      <p class="hero-tagline">Detailed comparison of all rank benefits and exclusive features.</p>
+    </div>
   </header>
 
-  <main class="perks-container">
-
-    <p class="perks-intro">
-      Each rank builds upon the previous one, giving you access to more commands, features, and exclusive content.
-      Higher ranks include all perks from lower tiers plus additional benefits!
-    </p>
-
+  <main class="container">
     <!-- Perks Comparison Table -->
-    <div style="overflow-x: auto;">
-      <table class="comparison-table">
-        <thead>
-          <tr>
-            <th>Perk</th>
-            <th style="color: #a78bfa;">HERO<br><small>₹50</small></th>
-            <th style="color: #22d3ee;">LEGEND<br><small>₹110</small></th>
-            <th style="color: #fb923c;">VIP and VIP+ <br><small>₹110 / ₹149</small></th>
-            <th style="color: #ffd700;">MEGA VIP<br><small>₹199</small></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Colored Chat Prefix</td>
-            <td class="check">✓</td>
-            <td class="check">✓</td>
-            <td class="check">✓</td>
-            <td class="check">✓</td>
-          </tr>
-          <tr>
-            <td>/hat Command</td>
-            <td class="check">✓</td>
-            <td class="check">✓</td>
-            <td class="check">✓</td>
-            <td class="check">✓</td>
-          </tr>
-          <tr>
-            <td>Exclusive Kits</td>
-            <td class="check">✓</td>
-            <td class="check">✓</td>
-            <td class="check">✓</td>
-            <td class="check">✓</td>
-          </tr>
-          <tr>
-            <td>Extra Homes</td>
-            <td>+3</td>
-            <td>+5</td>
-            <td>+7</td>
-            <td>+10</td>
-          </tr>
-          <tr>
-            <td>/craft (Anywhere)</td>
-            <td class="cross">✗</td>
-            <td class="check">✓</td>
-            <td class="check">✓</td>
-            <td class="check">✓</td>
-          </tr>
-          <tr>
-            <td>Priority Support</td>
-            <td class="cross">✗</td>
-            <td class="check">✓</td>
-            <td class="check">✓</td>
-            <td class="check">✓</td>
-          </tr>
-          <tr>
-            <td>/enderchest (Anywhere)</td>
-            <td class="cross">✗</td>
-            <td class="cross">✗</td>
-            <td class="check">✓</td>
-            <td class="check">✓</td>
-          </tr>
-          <tr>
-            <td>Special Particles</td>
-            <td class="cross">✗</td>
-            <td class="cross">✗</td>
-            <td class="check">✓</td>
-            <td class="check">✓</td>
-          </tr>
-          <tr>
-            <td>Increased Claim Limits</td>
-            <td>1x</td>
-            <td>1x</td>
-            <td>2x</td>
-            <td>3x</td>
-          </tr>
-          <tr>
-            <td>Custom Join Messages</td>
-            <td class="cross">✗</td>
-            <td class="cross">✗</td>
-            <td class="check">✓</td>
-            <td class="check">✓</td>
-          </tr>
-          <tr>
-            <td>/fly (Survival)</td>
-            <td class="cross">✗</td>
-            <td class="cross">✗</td>
-            <td class="cross">✗</td>
-            <td class="check">✓</td>
-          </tr>
-          <tr>
-            <td>Custom Nickname</td>
-            <td class="cross">✗</td>
-            <td class="cross">✗</td>
-            <td class="cross">✗</td>
-            <td class="check">✓</td>
-          </tr>
-          <tr>
-            <td>Event Priority</td>
-            <td class="cross">✗</td>
-            <td class="cross">✗</td>
-            <td class="cross">✗</td>
-            <td class="check">✓</td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="card" style="padding: 0; overflow: hidden; border-radius: 20px;">
+      <div style="overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; text-align: center;">
+          <thead style="background: rgba(147, 51, 234, 0.1);">
+            <tr>
+              <th style="padding: 24px; text-align: left; border-bottom: 1px solid var(--surface-border);">Feature</th>
+              <th style="padding: 24px; border-bottom: 1px solid var(--surface-border); color: #a78bfa;">Wraith</th>
+              <th style="padding: 24px; border-bottom: 1px solid var(--surface-border); color: #22d3ee;">Phantom</th>
+              <th style="padding: 24px; border-bottom: 1px solid var(--surface-border); color: #fb923c;">Specter</th>
+              <th style="padding: 24px; border-bottom: 1px solid var(--surface-border); color: var(--accent);">Void King</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding: 16px 24px; text-align: left; border-bottom: 1px solid var(--surface-border);">Colored Prefix</td>
+              <td style="padding: 16px 24px; border-bottom: 1px solid var(--surface-border); color: #10b981;">✓</td>
+              <td style="padding: 16px 24px; border-bottom: 1px solid var(--surface-border); color: #10b981;">✓</td>
+              <td style="padding: 16px 24px; border-bottom: 1px solid var(--surface-border); color: #10b981;">✓</td>
+              <td style="padding: 16px 24px; border-bottom: 1px solid var(--surface-border); color: #10b981;">✓</td>
+            </tr>
+            <tr>
+              <td style="padding: 16px 24px; text-align: left; border-bottom: 1px solid var(--surface-border);">/hat Command</td>
+              <td style="padding: 16px 24px; border-bottom: 1px solid var(--surface-border); color: #10b981;">✓</td>
+              <td style="padding: 16px 24px; border-bottom: 1px solid var(--surface-border); color: #10b981;">✓</td>
+              <td style="padding: 16px 24px; border-bottom: 1px solid var(--surface-border); color: #10b981;">✓</td>
+              <td style="padding: 16px 24px; border-bottom: 1px solid var(--surface-border); color: #10b981;">✓</td>
+            </tr>
+            <tr>
+              <td style="padding: 16px 24px; text-align: left; border-bottom: 1px solid var(--surface-border);">Extra Homes</td>
+              <td style="padding: 16px 24px; border-bottom: 1px solid var(--surface-border);">+3</td>
+              <td style="padding: 16px 24px; border-bottom: 1px solid var(--surface-border);">+5</td>
+              <td style="padding: 16px 24px; border-bottom: 1px solid var(--surface-border);">+7</td>
+              <td style="padding: 16px 24px; border-bottom: 1px solid var(--surface-border);">+10</td>
+            </tr>
+            <tr>
+              <td style="padding: 16px 24px; text-align: left; border-bottom: 1px solid var(--surface-border);">/craft (Anywhere)</td>
+              <td style="padding: 16px 24px; border-bottom: 1px solid var(--surface-border); color: #ef4444;">✗</td>
+              <td style="padding: 16px 24px; border-bottom: 1px solid var(--surface-border); color: #10b981;">✓</td>
+              <td style="padding: 16px 24px; border-bottom: 1px solid var(--surface-border); color: #10b981;">✓</td>
+              <td style="padding: 16px 24px; border-bottom: 1px solid var(--surface-border); color: #10b981;">✓</td>
+            </tr>
+            <tr>
+              <td style="padding: 16px 24px; text-align: left; border-bottom: 1px solid var(--surface-border);">Priority Support</td>
+              <td style="padding: 16px 24px; border-bottom: 1px solid var(--surface-border); color: #ef4444;">✗</td>
+              <td style="padding: 16px 24px; border-bottom: 1px solid var(--surface-border); color: #10b981;">✓</td>
+              <td style="padding: 16px 24px; border-bottom: 1px solid var(--surface-border); color: #10b981;">✓</td>
+              <td style="padding: 16px 24px; border-bottom: 1px solid var(--surface-border); color: #10b981;">✓</td>
+            </tr>
+            <tr>
+              <td style="padding: 16px 24px; text-align: left; border-bottom: 1px solid var(--surface-border);">/enderchest (Anywhere)</td>
+              <td style="padding: 16px 24px; border-bottom: 1px solid var(--surface-border); color: #ef4444;">✗</td>
+              <td style="padding: 16px 24px; border-bottom: 1px solid var(--surface-border); color: #ef4444;">✗</td>
+              <td style="padding: 16px 24px; border-bottom: 1px solid var(--surface-border); color: #10b981;">✓</td>
+              <td style="padding: 16px 24px; border-bottom: 1px solid var(--surface-border); color: #10b981;">✓</td>
+            </tr>
+            <tr>
+              <td style="padding: 16px 24px; text-align: left; border-bottom: 1px solid var(--surface-border);">Particle Effects</td>
+              <td style="padding: 16px 24px; border-bottom: 1px solid var(--surface-border); color: #ef4444;">✗</td>
+              <td style="padding: 16px 24px; border-bottom: 1px solid var(--surface-border); color: #ef4444;">✗</td>
+              <td style="padding: 16px 24px; border-bottom: 1px solid var(--surface-border); color: #10b981;">✓</td>
+              <td style="padding: 16px 24px; border-bottom: 1px solid var(--surface-border); color: #10b981;">✓</td>
+            </tr>
+            <tr>
+              <td style="padding: 16px 24px; text-align: left; border-bottom: 1px solid var(--surface-border);">/fly (Survival)</td>
+              <td style="padding: 16px 24px; border-bottom: 1px solid var(--surface-border); color: #ef4444;">✗</td>
+              <td style="padding: 16px 24px; border-bottom: 1px solid var(--surface-border); color: #ef4444;">✗</td>
+              <td style="padding: 16px 24px; border-bottom: 1px solid var(--surface-border); color: #ef4444;">✗</td>
+              <td style="padding: 16px 24px; border-bottom: 1px solid var(--surface-border); color: #10b981;">✓</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
 
     <!-- Perk Categories -->
-    <h2 style="font-family: 'Orbitron', sans-serif; color: #c084ff; text-align: center; margin: 50px 0 30px;">Detailed Perk Breakdown</h2>
+    <h2 class="text-center mt-8 mb-8">Detailed <span class="gradient-text">Breakdown</span></h2>
 
-    <div class="perks-grid">
-
-      <div class="perk-category">
-        <h3>Commands</h3>
-        <ul>
-          <li>/hat - Wear any block as a hat</li>
-          <li>/craft - Open crafting table anywhere (Phantom+)</li>
-          <li>/enderchest - Access enderchest anywhere (Specter+)</li>
-          <li>/fly - Fly in survival mode (Void King only)</li>
-          <li>/nick - Set custom colored nickname (Void King only)</li>
+    <div class="features-grid">
+      <div class="card">
+        <h3 style="color: var(--primary-light); margin-bottom: 20px;">Commands</h3>
+        <ul class="perks-list">
+          <li><i>✓</i> /hat - Wear any block</li>
+          <li><i>✓</i> /craft - Portable table (Phantom+)</li>
+          <li><i>✓</i> /enderchest - Portable E-chest (Specter+)</li>
+          <li><i>✓</i> /fly - Survival flight (Void King)</li>
+          <li><i>✓</i> /nick - Color nickname (Void King)</li>
         </ul>
       </div>
 
-      <div class="perk-category">
-        <h3>Kits</h3>
-        <ul>
-          <li>Wraith Kit - Basic starter kit with tools</li>
-          <li>Phantom Kit - Enhanced gear with enchantments</li>
-          <li>Specter Kit - Powerful weapons & armor</li>
-          <li>Void King Kit - Legendary equipment set</li>
+      <div class="card">
+        <h3 style="color: var(--primary-light); margin-bottom: 20px;">Visual Effects</h3>
+        <ul class="perks-list">
+          <li><i>✓</i> Custom Rank Prefixes</li>
+          <li><i>✓</i> Particle Trails (Specter+)</li>
+          <li><i>✓</i> Animated Chat Tags (Specter+)</li>
+          <li><i>✓</i> Custom Join Messages (Specter+)</li>
+          <li><i>✓</i> Golden King Tag (Void King)</li>
         </ul>
       </div>
 
-      <div class="perk-category">
-        <h3>Homes & Claims</h3>
-        <ul>
-          <li>Wraith: 3 extra homes (8 total)</li>
-          <li>Phantom: 5 extra homes (10 total)</li>
-          <li>Specter: 7 extra homes, 2x claim blocks</li>
-          <li>Void King: 10 extra homes, 3x claim blocks</li>
+      <div class="card">
+        <h3 style="color: var(--primary-light); margin-bottom: 20px;">Discord Perks</h3>
+        <ul class="perks-list">
+          <li><i>✓</i> Exclusive Discord Roles</li>
+          <li><i>✓</i> Private Rank Channels</li>
+          <li><i>✓</i> Ticket Priority (Phantom+)</li>
+          <li><i>✓</i> Event Early Access</li>
+          <li><i>✓</i> King's Lounge (Void King)</li>
         </ul>
       </div>
-
-      <div class="perk-category">
-        <h3>Visual Perks</h3>
-        <ul>
-          <li>Colored chat prefix for all ranks</li>
-          <li>Custom particle effects (Specter+)</li>
-          <li>Animated tags (Specter+)</li>
-          <li>Custom join/leave messages (Specter+)</li>
-          <li>Golden animated tag (Void King only)</li>
-        </ul>
-      </div>
-
-      <div class="perk-category">
-        <h3>Discord Benefits</h3>
-        <ul>
-          <li>Rank role in Discord server</li>
-          <li>Access to rank-exclusive channels</li>
-          <li>Priority support in tickets (Phantom+)</li>
-          <li>Exclusive Void King lounge (Void King only)</li>
-        </ul>
-      </div>
-
-      <div class="perk-category">
-        <h3>Special Benefits</h3>
-        <ul>
-          <li>Support the server's development</li>
-          <li>Priority in server events (Void King)</li>
-          <li>Giveaway bonus entries (Void King)</li>
-          <li>Early access to new features (Void King)</li>
-        </ul>
-      </div>
-
     </div>
 
-    <div style="text-align: center; margin-top: 50px;">
-      <a href="buy.html" class="btn btn-primary" style="font-size: 18px; padding: 18px 45px;">Ready to Purchase?</a>
+    <div class="text-center mt-8">
+      <a href="buy.html" class="btn btn-primary">Ready to Level Up?</a>
     </div>
-
   </main>
 
+
   <footer class="footer">
-    <div class="footer-content">
-      <p>&copy; 2025 VoidSMP. All rights reserved.</p>
-      <p>Join our <a href="https://discord.gg/TjmPSByY" target="_blank">Discord</a> for support and updates.</p>
-      <div class="footer-links">
-        <a href="privacy.html">Privacy Policy</a>
-        <span class="footer-divider">|</span>
-        <a href="terms.html">Terms of Service</a>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="home.html" class="nav-brand" style="margin-bottom: 20px; display: block;">VOID SMP</a>
+          <p class="text-muted">The ultimate Minecraft Lifesteal experience. Join our community and conquer the void.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="store.html">Store</a></li>
+            <li><a href="perks.html">Perks</a></li>
+            <li><a href="buy.html">Buy Rank</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="https://discord.gg/TjmPSByY" target="_blank">Discord Support</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 VoidSMP. Not affiliated with Mojang AB.</p>
       </div>
     </div>
   </footer>
+
 
   <div class="banner">
     ⚠️ LIFESTEAL IS UNDER MAINTENANCE ⚠️

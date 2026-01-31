@@ -10,102 +10,104 @@
 <body>
 
   <nav class="navbar">
-    <div class="nav-brand">VOID SMP</div>
-    <ul class="nav-links">
-      <li><a href="home.html">Home</a></li>
-      <li><a href="store.html">Store</a></li>
-      <li><a href="perks.html">Perks</a></li>
-      <li><a href="buy.html">Buy Rank</a></li>
-    </ul>
-    <div class="nav-auth">
-      <button class="btn-login" onclick="handleLogin()" id="loginBtn">Sign In</button>
-      <div class="user-menu" id="userMenu" style="display: none;">
-        <img src="" alt="Profile" class="user-avatar" id="userAvatar">
-        <span class="user-name" id="userName"></span>
-        <button class="btn-logout" onclick="handleLogout()">Sign Out</button>
+    <div class="container nav-content">
+      <a href="home.html" class="nav-brand">VOID SMP</a>
+      <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="store.html">Store</a></li>
+        <li><a href="perks.html">Perks</a></li>
+        <li><a href="buy.html">Buy Rank</a></li>
+      </ul>
+      <div class="nav-auth">
+        <div id="loginBtn"></div>
+        <div id="userMenu" class="user-menu" style="display:none;">
+          <img id="userAvatar" class="user-avatar" alt="User">
+          <span id="userName" class="user-name"></span>
+          <button onclick="handleLogout()" class="btn-logout">Logout</button>
+        </div>
       </div>
     </div>
   </nav>
 
-  <header class="page-header">
-    <h1>VOID SMP RANKS</h1>
-    <p class="subtitle">Support the server and unlock exclusive perks!</p>
+  <header class="hero" style="padding: 140px 0 60px;">
+    <div class="container animate-fade-up">
+      <h1 class="hero-title gradient-text">SERVER RANKS</h1>
+      <p class="hero-tagline">Choose your path and dominate the void with exclusive abilities.</p>
+    </div>
   </header>
 
-  <main class="ranks-container">
-
-    <div class="rank-card rank-wraith">
-      <div class="rank-header">
-        <h2>WRAITH</h2>
-        <span class="rank-price">₹90</span>
+  <main class="container">
+    <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+      <!-- Wraith Rank -->
+      <div class="card rank-card" style="border-color: #8b5cf644;">
+        <div class="rank-header">
+          <h2 style="color: #a78bfa;">WRAITH</h2>
+          <span class="rank-price">₹90</span>
+        </div>
+        <p class="text-muted mb-8">The entry-level rank with essential perks to enhance your gameplay.</p>
+        <ul class="perks-list mb-8">
+          <li><i>✓</i> Custom prefix & tag</li>
+          <li><i>✓</i> /hat command</li>
+          <li><i>✓</i> 3 extra homes</li>
+          <li><i>✓</i> Wraith kits</li>
+          <li><i>✓</i> Discord Rank</li>
+        </ul>
+        <a href="buy.html" class="btn btn-primary" style="width: 100%;">Buy Wraith</a>
       </div>
-      <p style="color: #aaa; margin-bottom: 15px;">The entry-level rank with essential perks to enhance your gameplay.</p>
-      <ul>
-        <li>Custom colored chat prefix & tag</li>
-        <li>/hat command - wear any block on your head</li>
-        <li>Access to exclusive Wraith kits</li>
-        <li>3 extra home locations</li>
-        <li>Wraith rank prefix in Discord</li>
-      </ul>
-      <a href="buy.html" class="btn btn-primary">Buy Wraith</a>
-    </div>
 
-    <div class="rank-card rank-phantom">
-      <div class="rank-header">
-        <h2>PHANTOM</h2>
-        <span class="rank-price">₹110</span>
+      <!-- Phantom Rank -->
+      <div class="card rank-card" style="border-color: #06b6d444;">
+        <div class="rank-header">
+          <h2 style="color: #22d3ee;">PHANTOM</h2>
+          <span class="rank-price">₹110</span>
+        </div>
+        <p class="text-muted mb-8">Level up with more powerful commands and priority support.</p>
+        <ul class="perks-list mb-8">
+          <li><i>✓</i> All Wraith perks</li>
+          <li><i>✓</i> /craft command</li>
+          <li><i>✓</i> 8 total homes</li>
+          <li><i>✓</i> Priority Support</li>
+          <li><i>✓</i> Phantom Discord</li>
+        </ul>
+        <a href="buy.html" class="btn btn-primary" style="width: 100%;">Buy Phantom</a>
       </div>
-      <p style="color: #aaa; margin-bottom: 15px;">Level up with more powerful commands and priority support.</p>
-      <ul>
-        <li>All Wraith perks included</li>
-        <li>/craft command - open crafting table anywhere</li>
-        <li>5 extra home locations (8 total)</li>
-        <li>Priority support in tickets</li>
-        <li>Phantom exclusive kit & tag</li>
-        <li>Access to Phantom-only Discord channels</li>
-      </ul>
-      <a href="buy.html" class="btn btn-primary">Buy Phantom</a>
-    </div>
 
-    <div class="rank-card rank-specter">
-      <div class="rank-header">
-        <h2>SPECTER</h2>
-        <span class="rank-price">₹150</span>
+      <!-- Specter Rank -->
+      <div class="card rank-card" style="border-color: #f9731644;">
+        <div class="rank-header">
+          <h2 style="color: #fb923c;">SPECTER</h2>
+          <span class="rank-price">₹150</span>
+        </div>
+        <p class="text-muted mb-8">Advanced rank with special effects and increased limits.</p>
+        <ul class="perks-list mb-8">
+          <li><i>✓</i> All Phantom perks</li>
+          <li><i>✓</i> /enderchest</li>
+          <li><i>✓</i> Particle Effects</li>
+          <li><i>✓</i> 2x Claim Limits</li>
+          <li><i>✓</i> Animated Tag</li>
+        </ul>
+        <a href="buy.html" class="btn btn-primary" style="width: 100%;">Buy Specter</a>
       </div>
-      <p style="color: #aaa; margin-bottom: 15px;">Advanced rank with special effects and increased limits.</p>
-      <ul>
-        <li>All Phantom perks included</li>
-        <li>/enderchest command - access enderchest anywhere</li>
-        <li>Special particle effects around your character</li>
-        <li>Increased claim limits (2x normal)</li>
-        <li>Specter exclusive kit & animated tag</li>
-        <li>7 extra home locations (10 total)</li>
-        <li>Custom join/leave messages</li>
-      </ul>
-      <a href="buy.html" class="btn btn-primary">Buy Specter</a>
-    </div>
 
-    <div class="rank-card rank-voidking">
-      <div class="rank-header">
-        <h2>VOID KING</h2>
-        <span class="rank-price">₹200</span>
+      <!-- Void King Rank -->
+      <div class="card rank-card" style="border-color: var(--accent); border-width: 2px;">
+        <div class="rank-header">
+          <h2 style="color: var(--accent);">VOID KING</h2>
+          <span class="rank-price">₹200</span>
+        </div>
+        <p class="text-muted mb-8">The ultimate rank with maximum perks and exclusive benefits.</p>
+        <ul class="perks-list mb-8">
+          <li><i>✓</i> All Specter perks</li>
+          <li><i>✓</i> /fly (Survival)</li>
+          <li><i>✓</i> Colored Nickname</li>
+          <li><i>✓</i> 3x Claim Limits</li>
+          <li><i>✓</i> 15 total homes</li>
+        </ul>
+        <a href="buy.html" class="btn btn-accent" style="width: 100%;">Buy Void King</a>
       </div>
-      <p style="color: #aaa; margin-bottom: 15px;">The ultimate rank with maximum perks and exclusive benefits.</p>
-      <ul>
-        <li>All Specter perks included</li>
-        <li>/fly command (Survival mode only)</li>
-        <li>Custom nickname with colors & formatting</li>
-        <li>Maximum claim limits (3x normal)</li>
-        <li>Void King exclusive legendary kit</li>
-        <li>Animated golden Void King tag</li>
-        <li>10 extra home locations (15 total)</li>
-        <li>Priority in server events & giveaways</li>
-        <li>Exclusive Void King Discord role & channels</li>
-      </ul>
-      <a href="buy.html" class="btn btn-primary">Buy Void King</a>
     </div>
-
   </main>
+
 
   <section class="about-section">
     <div class="container">
@@ -119,16 +121,36 @@
   </section>
 
   <footer class="footer">
-    <div class="footer-content">
-      <p>&copy; 2025 VoidSMP. All rights reserved.</p>
-      <p>Join our <a href="https://discord.gg/TjmPSByY" target="_blank">Discord</a> for support and updates.</p>
-      <div class="footer-links">
-        <a href="privacy.html">Privacy Policy</a>
-        <span class="footer-divider">|</span>
-        <a href="terms.html">Terms of Service</a>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="home.html" class="nav-brand" style="margin-bottom: 20px; display: block;">VOID SMP</a>
+          <p class="text-muted">The ultimate Minecraft Lifesteal experience. Join our community and conquer the void.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="store.html">Store</a></li>
+            <li><a href="perks.html">Perks</a></li>
+            <li><a href="buy.html">Buy Rank</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="https://discord.gg/TjmPSByY" target="_blank">Discord Support</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 VoidSMP. Not affiliated with Mojang AB.</p>
       </div>
     </div>
   </footer>
+
 
   <div class="banner">
     ⚠️ LIFESTEAL IS UNDER MAINTENANCE ⚠️

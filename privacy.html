@@ -10,158 +10,96 @@
 <body>
 
   <nav class="navbar">
-    <div class="nav-brand">VOID SMP</div>
-    <ul class="nav-links">
-      <li><a href="home.html">Home</a></li>
-      <li><a href="store.html">Store</a></li>
-      <li><a href="perks.html">Perks</a></li>
-      <li><a href="buy.html">Buy Rank</a></li>
-    </ul>
-    <div class="nav-auth">
-      <button class="btn-login" onclick="handleLogin()" id="loginBtn">Sign In</button>
-      <div class="user-menu" id="userMenu" style="display: none;">
-        <img src="" alt="Profile" class="user-avatar" id="userAvatar">
-        <span class="user-name" id="userName"></span>
-        <button class="btn-logout" onclick="handleLogout()">Sign Out</button>
+    <div class="container nav-content">
+      <a href="home.html" class="nav-brand">VOID SMP</a>
+      <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="store.html">Store</a></li>
+        <li><a href="perks.html">Perks</a></li>
+        <li><a href="buy.html">Buy Rank</a></li>
+      </ul>
+      <div class="nav-auth">
+        <div id="loginBtn"></div>
+        <div id="userMenu" class="user-menu" style="display:none;">
+          <img id="userAvatar" class="user-avatar" alt="User">
+          <span id="userName" class="user-name"></span>
+          <button onclick="handleLogout()" class="btn-logout">Logout</button>
+        </div>
       </div>
     </div>
   </nav>
 
-  <header class="page-header">
-    <h1>PRIVACY POLICY</h1>
-    <p class="subtitle">Your privacy matters to us</p>
+  <header class="hero" style="padding: 140px 0 60px;">
+    <div class="container animate-fade-up">
+      <h1 class="hero-title gradient-text">PRIVACY POLICY</h1>
+      <p class="hero-tagline">Last updated: January 2026 • Your data security is our priority.</p>
+    </div>
   </header>
 
-  <main class="legal-container">
-    <div class="legal-content">
-      <p class="legal-updated">Last updated: January 2025</p>
-
-      <section class="legal-section">
-        <h2>1. Introduction</h2>
-        <p>Welcome to VoidSMP ("we," "our," or "us"). This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our Minecraft server services. Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the site.</p>
+  <main class="container">
+    <div class="card" style="padding: 48px; max-width: 900px; margin: 0 auto;">
+      <section class="mb-8">
+        <h2 style="color: var(--primary-light); margin-bottom: 20px;">1. Introduction</h2>
+        <p class="text-muted">Welcome to VoidSMP. This Privacy Policy explains how we collect, use, and protect your information when you use our website and Minecraft server services. By using our services, you agree to the practices described in this policy.</p>
       </section>
 
-      <section class="legal-section">
-        <h2>2. Information We Collect</h2>
-        <h3>2.1 Personal Information</h3>
-        <p>We may collect personal information that you voluntarily provide to us when you:</p>
-        <ul>
-          <li>Register or sign in using Google OAuth</li>
-          <li>Make a purchase through our Discord ticketing system</li>
-          <li>Contact us for support</li>
-          <li>Participate in our Discord community</li>
-        </ul>
-        <p>This information may include:</p>
-        <ul>
-          <li>Name and email address (from Google sign-in)</li>
-          <li>Minecraft username</li>
-          <li>Discord username and ID</li>
-          <li>Payment information (processed through third-party services)</li>
-        </ul>
+      <section class="mb-8">
+        <h2 style="color: var(--primary-light); margin-bottom: 20px;">2. Information Collection</h2>
+        <h3 class="mb-4" style="font-size: 1.1rem;">2.1 Personal Data</h3>
+        <p class="text-muted mb-4">We collect information you provide via Google Auth (Name, Email, Profile Picture) and Discord (Username, ID) to manage your account and deliver purchases.</p>
+        <h3 class="mb-4" style="font-size: 1.1rem;">2.2 Automatic Data</h3>
+        <p class="text-muted">We may collect technical data like IP addresses and browser types to prevent abuse and improve our platform's performance.</p>
+      </section>
 
-        <h3>2.2 Automatically Collected Information</h3>
-        <p>When you visit our website, we may automatically collect certain information about your device, including:</p>
-        <ul>
-          <li>IP address</li>
-          <li>Browser type and version</li>
-          <li>Operating system</li>
-          <li>Pages visited and time spent</li>
-          <li>Referring website addresses</li>
+      <section class="mb-8">
+        <h2 style="color: var(--primary-light); margin-bottom: 20px;">3. Data Usage</h2>
+        <ul class="perks-list">
+          <li><i>✓</i> Deliver purchased ranks and items</li>
+          <li><i>✓</i> Provide technical support via Discord</li>
+          <li><i>✓</i> Analyze server performance and player trends</li>
+          <li><i>✓</i> Prevent fraud and unauthorized access</li>
         </ul>
       </section>
 
-      <section class="legal-section">
-        <h2>3. How We Use Your Information</h2>
-        <p>We use the information we collect to:</p>
-        <ul>
-          <li>Provide, maintain, and improve our services</li>
-          <li>Process transactions and send related information</li>
-          <li>Deliver purchased ranks and items to your Minecraft account</li>
-          <li>Send you technical notices and support messages</li>
-          <li>Respond to your comments, questions, and requests</li>
-          <li>Monitor and analyze trends, usage, and activities</li>
-          <li>Detect, investigate, and prevent fraudulent transactions and abuse</li>
-          <li>Personalize and improve your experience</li>
-        </ul>
-      </section>
-
-      <section class="legal-section">
-        <h2>4. Information Sharing</h2>
-        <p>We may share your information in the following situations:</p>
-        <ul>
-          <li><strong>With Service Providers:</strong> We may share your information with third-party vendors and service providers that perform services for us, such as payment processing.</li>
-          <li><strong>For Legal Purposes:</strong> We may disclose your information where required by law or if we believe disclosure is necessary to protect our rights or comply with a judicial proceeding.</li>
-          <li><strong>With Your Consent:</strong> We may share your information for any other purpose with your consent.</li>
-        </ul>
-        <p>We do not sell, trade, or otherwise transfer your personal information to outside parties for marketing purposes.</p>
-      </section>
-
-      <section class="legal-section">
-        <h2>5. Third-Party Services</h2>
-        <p>Our website and services may contain links to third-party websites and services, including:</p>
-        <ul>
-          <li><strong>Google:</strong> For authentication services (OAuth 2.0)</li>
-          <li><strong>Discord:</strong> For community and support services</li>
-          <li><strong>Payment Providers:</strong> For processing transactions</li>
-        </ul>
-        <p>These third parties have their own privacy policies, and we encourage you to review them. We are not responsible for the content or privacy practices of third-party sites.</p>
-      </section>
-
-      <section class="legal-section">
-        <h2>6. Data Security</h2>
-        <p>We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the Internet or electronic storage is 100% secure, and we cannot guarantee absolute security.</p>
-      </section>
-
-      <section class="legal-section">
-        <h2>7. Data Retention</h2>
-        <p>We retain your personal information for as long as necessary to fulfill the purposes outlined in this privacy policy, unless a longer retention period is required or permitted by law. When we no longer need your information, we will securely delete or anonymize it.</p>
-      </section>
-
-      <section class="legal-section">
-        <h2>8. Your Rights</h2>
-        <p>Depending on your location, you may have certain rights regarding your personal information, including:</p>
-        <ul>
-          <li>The right to access your personal information</li>
-          <li>The right to correct inaccurate information</li>
-          <li>The right to delete your personal information</li>
-          <li>The right to withdraw consent</li>
-          <li>The right to data portability</li>
-        </ul>
-        <p>To exercise these rights, please contact us through our Discord server.</p>
-      </section>
-
-      <section class="legal-section">
-        <h2>9. Children's Privacy</h2>
-        <p>Our services are intended for users who are at least 13 years of age. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us so we can delete such information.</p>
-      </section>
-
-      <section class="legal-section">
-        <h2>10. Changes to This Policy</h2>
-        <p>We may update this privacy policy from time to time. We will notify you of any changes by posting the new privacy policy on this page and updating the "Last updated" date. You are advised to review this privacy policy periodically for any changes.</p>
-      </section>
-
-      <section class="legal-section">
-        <h2>11. Contact Us</h2>
-        <p>If you have any questions about this Privacy Policy, please contact us:</p>
-        <ul>
-          <li>Through our Discord server: <a href="https://discord.gg/TjmPSByY" target="_blank">discord.gg/TjmPSByY</a></li>
-          <li>By creating a support ticket in Discord</li>
-        </ul>
+      <section>
+        <h2 style="color: var(--primary-light); margin-bottom: 20px;">4. Contact</h2>
+        <p class="text-muted">If you have any questions, join our Discord server and open a support ticket. We're here to help.</p>
       </section>
     </div>
   </main>
 
+
   <footer class="footer">
-    <div class="footer-content">
-      <p>&copy; 2025 VoidSMP. All rights reserved.</p>
-      <p>Join our <a href="https://discord.gg/TjmPSByY" target="_blank">Discord</a> for support and updates.</p>
-      <div class="footer-links">
-        <a href="privacy.html">Privacy Policy</a>
-        <span class="footer-divider">|</span>
-        <a href="terms.html">Terms of Service</a>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="home.html" class="nav-brand" style="margin-bottom: 20px; display: block;">VOID SMP</a>
+          <p class="text-muted">The ultimate Minecraft Lifesteal experience. Join our community and conquer the void.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="store.html">Store</a></li>
+            <li><a href="perks.html">Perks</a></li>
+            <li><a href="buy.html">Buy Rank</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="https://discord.gg/TjmPSByY" target="_blank">Discord Support</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 VoidSMP. Not affiliated with Mojang AB.</p>
       </div>
     </div>
   </footer>
+
 
   <div class="banner">
     ⚠️ LIFESTEAL IS UNDER MAINTENANCE ⚠️
